@@ -1,4 +1,4 @@
-// import "./App.css";
+import "./App.css";
 import Landing from "./components/landing";
 import Next from "./components/Next";
 import Game from "./components/Game";
@@ -9,11 +9,21 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav>
-          <Link to="/"> Home</Link>
-          <Link to={"/Next"}>What's Next</Link>
-          <Link to={"/Game"}>Play The Game</Link>
-          <Link to={"/Comments"}>What You Thinking?</Link>
+        <nav className="nav">
+          <Link to="/" style={{ textDecoration: "none" }}>
+            {" "}
+            Home
+          </Link>
+          <Link id="next" to={"/Next"}>
+            What's Next
+          </Link>
+          <Link id="game" to={"/Game"}>
+            The Game
+          </Link>
+
+          <Link id="comments" to={"/Comments"}>
+            Talk
+          </Link>
         </nav>
         <Routes>
           <Route path="/" element={<Landing />} />

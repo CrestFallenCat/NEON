@@ -1,9 +1,11 @@
 import React from "react";
-// import "./components/landingCSS";
+import "./landingCSS.css";
 import shipwreck from "./pics/ship.png";
 import synthwave from "./pics/synth.png";
+import { useNavigate } from "react-router-dom";
 
 export function Landing() {
+  let navigate = useNavigate();
   return (
     <div className="container">
       <div className="intro">
@@ -36,22 +38,33 @@ export function Landing() {
           are Midjourney and Open Ai's DAll-E 2 but there are many less
           sophisticated programs.
         </p>
-        <img src={shipwreck} alt="AI art of a shipwreck"></img>
+        <img id="ship" src={shipwreck} alt="AI art of a shipwreck"></img>
         <figcaption>
           I used DALL-E to create this, it was given the prompt: "digital art,
           ship wreck dark sea underwater" it did this in about 10 seconds.
         </figcaption>
         <img
           src={synthwave}
+          id="synth"
           alt="four separate pictures of an industrial cityscape with a neon colour palette"
         ></img>
         <figcaption>
-          Midjourny was used to create this, with the prompt: "A monumental,
+          Midjourney was used to create this, with the prompt: "A monumental,
           Michelangelo-esque landscape of a once-bustling factory, now
           controlled by AI, with disoriented workers experiencing ennui as they
           drift through a vibrant haze of dark neon synth colors
         </figcaption>
         <p>What can </p>
+        <p>
+          click here if you want to play the game
+          <button
+            onClick={() => {
+              navigate("/Game");
+            }}
+          >
+            The Game
+          </button>
+        </p>
       </div>
     </div>
   );
