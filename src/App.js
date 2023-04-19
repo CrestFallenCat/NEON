@@ -3,27 +3,32 @@ import Landing from "./components/landing";
 import Next from "./components/Next";
 import Game from "./components/Game";
 import Comments from "./components/Comments";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  NavLink,
+  Routes,
+} from "react-router-dom";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <nav className="nav">
-          <Link to="/" style={{ textDecoration: "none" }}>
+        <nav>
+          <NavLink to="/" style={{ textDecoration: "none" }}>
             {" "}
             Home
-          </Link>
-          <Link id="next" to={"/Next"}>
+          </NavLink>
+          <NavLink id="next" to={"/Next"}>
             What's Next
-          </Link>
-          <Link id="game" to={"/Game"}>
+          </NavLink>
+          <NavLink id="game" to={"/Game"}>
             The Game
-          </Link>
+          </NavLink>
 
-          <Link id="comments" to={"/Comments"}>
+          <NavLink id="comments" to={"/Comments"}>
             Talk
-          </Link>
+          </NavLink>
         </nav>
         <Routes>
           <Route path="/" element={<Landing />} />

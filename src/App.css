@@ -3,30 +3,57 @@ body {
   background-color: black;
 }
 
-.nav a {
+nav a {
   font-family: "Indie Flower", cursive;
 
   text-decoration: inherit;
   font-size: 3.3vw;
-  letter-spacing: 8px;
+  letter-spacing: 3px;
   margin-right: 5%;
   margin-left: 2%;
   color: rgb(255, 255, 255);
-  font-weight: bolder;
+  font-weight: bold;
   line-height: 100px;
   text-shadow: 0 0 20px rgb(232, 13, 239), 0 0 60px rgb(248, 50, 255);
+  transition: 0.5s;
 }
 
-.nav a:hover {
+nav a:hover {
   text-shadow: 0 0 70px rgb(248, 50, 255), 0 0 80px rgb(248, 50, 255),
     0 0 90px rgb(248, 50, 255), 0 0 100px rgb(248, 50, 255),
-    0 0 110px rgb(248, 50, 255), 0 0 120px rgb(248, 50, 255);
+    0 0 120px rgb(248, 50, 255), 0 0 140px rgb(248, 50, 255),
+    0 0 160px rgb(248, 50, 255);
 }
-
-.nav {
+nav a.active {
+  text-shadow: 0 0 70px rgb(248, 50, 255), 0 0 80px rgb(248, 50, 255),
+    0 0 90px rgb(248, 50, 255), 0 0 100px rgb(248, 50, 255),
+    0 0 120px rgb(248, 50, 255), 0 0 140px rgb(248, 50, 255),
+    0 0 160px rgb(248, 50, 255);
+}
+nav {
   text-align: center;
 
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+@media only screen and (max-width: 1500px) {
+  nav a.active {
+    color: rgb(145, 248, 245);
+    text-shadow: 0 0 20px rgb(13, 170, 201), 0 0 60px rgb(13, 170, 201);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  nav a {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    line-height: 45px;
+    padding-top: 10px;
+    margin-left: 20px;
+  }
+  nav {
+    padding: 0;
+  }
 }
