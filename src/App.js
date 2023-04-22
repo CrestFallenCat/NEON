@@ -27,6 +27,7 @@ function App() {
           <AnimatedPage />
         </Router>
       </div>
+
       <Footer />
     </div>
   );
