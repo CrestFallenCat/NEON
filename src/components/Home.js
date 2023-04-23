@@ -129,36 +129,28 @@ export function Home() {
         </div>
       </div>
       <div className="wrapper">
-        <FontAwesomeIcon className="icons" icon={faAngleLeft}></FontAwesomeIcon>
-        <Carousel responsive={responsive}>
-          <div className="carousel">
-            <img
-              id="ship"
-              src={shipwreck}
-              alt="AI art of a shipwreck under a moody sea"
-            ></img>
-            <img
-              src={synthwave}
-              id="synth"
-              alt="four separate pictures of an industrial cityscape with a neon colour palette"
-            ></img>
-            <img
-              src={sea}
-              id="sea"
-              alt="stormy atmosphere, tall monoliths that look like buildings coming out of the sea"
-            ></img>
-            <img
-              src={neon}
-              id="neon"
-              alt="four separate pictures of abstract neon faces"
-            ></img>
-          </div>
+        <Carousel className="carousel" responsive={responsive}>
+          <img
+            id="ship"
+            src={shipwreck}
+            alt="AI art of a shipwreck under a moody sea"
+          ></img>
+          <img
+            src={synthwave}
+            id="synth"
+            alt="four separate pictures of an industrial cityscape with a neon colour palette"
+          ></img>
+          <img
+            src={sea}
+            id="sea"
+            alt="stormy atmosphere, tall monoliths that look like buildings coming out of the sea"
+          ></img>
+          <img
+            src={neon}
+            id="neon"
+            alt="four separate pictures of abstract neon faces"
+          ></img>
         </Carousel>
-
-        <FontAwesomeIcon
-          className="icons"
-          icon={faAngleRight}
-        ></FontAwesomeIcon>
       </div>
 
       <p>
