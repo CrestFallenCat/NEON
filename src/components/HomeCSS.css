@@ -1,40 +1,14 @@
 body {
   color: white;
 }
-/* #ship,
-#synth {
-  width: 60%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-} */
-.wrapper {
-  margin-left: 40px;
-  margin-right: 40px;
-  max-width: 1200px;
-  position: relative;
-}
-.wrapper .carousel {
-  font-size: 0px;
-
-  white-space: nowrap;
-  overflow: hidden;
-}
 
 .icons:last-child {
   right: 0;
 }
-
-.carousel img {
-  height: 500px;
-  width: calc(100% / 3);
-  margin-left: 10px;
-  object-fit: contain;
-}
-
-.carousel img:first-child {
-  margin-left: auto;
+.carousel-container {
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: 60px;
 }
 .softwareGrid {
   display: grid;
@@ -74,7 +48,9 @@ body {
 
   padding: 10%;
 }
-
+.about-images {
+  /* margin-top: 70px; */
+}
 @media screen and (max-width: 900px) {
   .carousel img {
     width: calc(100% / 2);

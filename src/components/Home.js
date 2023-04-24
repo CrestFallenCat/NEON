@@ -1,41 +1,24 @@
 // import React from "react";
 import "./HomeCSS.css";
-import shipwreck from "./pics/ship.png";
-import synthwave from "./pics/synth.png";
-import sea from "./pics/seapng.png";
-import neon from "./pics/creation.png";
+// import shipwreck from "./pics/ship.png";
+// import synthwave from "./pics/synth.png";
+// import sea from "./pics/seapng.png";
+// import spaceship from "./pics/creation.png";
 import mid from "./pics/mid.png";
 import open from "./pics/openai.png";
+// import clown from "./pics/clownl.png";
+// import sunset from "./pics/sunset.png";
+// import towers from "./pics/towers.png";
+// import ball from "./pics/ball.png";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+
+import CarouselPics from "./CarouselPics";
 
 export function Home() {
   let navigate = useNavigate();
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
+
   // const [showQuote, setShowQuote] = useState(true);
 
   // useEffect(() => {
@@ -128,32 +111,11 @@ export function Home() {
           </p>
         </div>
       </div>
-      <div className="wrapper">
-        <Carousel className="carousel" responsive={responsive}>
-          <img
-            id="ship"
-            src={shipwreck}
-            alt="AI art of a shipwreck under a moody sea"
-          ></img>
-          <img
-            src={synthwave}
-            id="synth"
-            alt="four separate pictures of an industrial cityscape with a neon colour palette"
-          ></img>
-          <img
-            src={sea}
-            id="sea"
-            alt="stormy atmosphere, tall monoliths that look like buildings coming out of the sea"
-          ></img>
-          <img
-            src={neon}
-            id="neon"
-            alt="four separate pictures of abstract neon faces"
-          ></img>
-        </Carousel>
+      <div className="carousel-container">
+        <CarouselPics />
       </div>
 
-      <p>
+      <p className="about-images">
         I found myself getting lost in the creation of these various images, the
         speed and quality of the art produced cant really be denied. Isn't art
         something more than just the 'look'? no actual feeling or emotion played
@@ -172,7 +134,6 @@ export function Home() {
           Click to play!
         </button>
       </p>
-      {/* </div> */}
     </motion.div>
   );
 }
