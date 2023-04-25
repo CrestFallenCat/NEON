@@ -11,6 +11,7 @@ body {
   margin-left: 60px;
   margin-right: 60px;
   margin-bottom: 60px;
+  z-index: 10;
 }
 .softwareGrid {
   display: grid;

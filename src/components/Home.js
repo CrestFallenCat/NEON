@@ -1,38 +1,17 @@
-// import React from "react";
+import React from "react";
 import "./HomeCSS.css";
-// import shipwreck from "./pics/ship.png";
-// import synthwave from "./pics/synth.png";
-// import sea from "./pics/seapng.png";
-// import spaceship from "./pics/creation.png";
+
 import mid from "./pics/mid.png";
 import open from "./pics/openai.png";
-// import clown from "./pics/clownl.png";
-// import sunset from "./pics/sunset.png";
-// import towers from "./pics/towers.png";
-// import ball from "./pics/ball.png";
+
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
 
 import CarouselPics from "./CarouselPics";
 
 export function Home() {
   let navigate = useNavigate();
 
-  // const [showQuote, setShowQuote] = useState(true);
-
-  // useEffect(() => {
-  //   // const quoteShown = sessionStorage.getItem("quoteShown");
-  //   // if (!quoteShown) {
-  //   const timeout = setTimeout(() => {
-  //     setShowQuote(true);
-  //     // sessionStorage.setItem("quoteShown", "true");
-  //     setTimeout(() => {
-  //       setShowQuote(false);
-  //     }, 6000); // fade out after 3 seconds
-  //   }, 2000); // fade in after 1 second
-  //   return () => clearTimeout(timeout);
-  // }, []);
   return (
     <motion.div
       className="home"
@@ -40,24 +19,6 @@ export function Home() {
       animate={{ width: "100%" }}
       exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
     >
-      {/* <div className="splash">
-        {showQuote && (
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0.8 } }}
-            // transition={{ duration: 0.8 }}
-          >
-            By far, the greatest danger of Artificial Intelligence is that
-            people conclude too early that they understand it. -Eliezer
-            Yudkowsky
-          </motion.p>
-        )}
-      </div> */}
-      {/* <div
-        className="afterSplash"
-        style={{ display: showQuote ? "none" : "block" }}
-      > */}
       <div className="intro">
         <h1>What is meant by AI art?</h1>
         <p>
