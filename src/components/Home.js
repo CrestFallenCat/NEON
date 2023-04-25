@@ -111,6 +111,14 @@ export function Home() {
           </p>
         </div>
       </div>
+      <div className="quote-container">
+        <q id="quote">
+          {" "}
+          By far, the greatest danger of Artificial Intelligence is that people
+          conclude too early that they understand it.{" "}
+        </q>{" "}
+        <span> - Eliezer Yudkowsky</span>
+      </div>
       <div className="carousel-container">
         <CarouselPics />
       </div>
