@@ -93,3 +93,57 @@ body {
   letter-spacing: 2px;
   font-size: 25px;
 }
+
+.play-game {
+  text-align: center;
+}
+
+.only-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#play-button {
+  display: inline-block;
+
+  font-size: 40px;
+
+  margin-top: 60px;
+  margin-bottom: 200px;
+  padding: 30px;
+  color: white;
+  border-radius: 10%;
+
+  cursor: pointer;
+
+  animation: glow 5s infinite;
+  transition: box-shadow 0.5s ease-in-out;
+}
+#play-button:hover {
+  animation: glow2 1s infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 5px 5px 20px rgb(234, 0, 255), -5px -5px 20px rgb(234, 0, 255);
+  }
+
+  50% {
+    box-shadow: 5px 5px 20px rgb(81, 176, 224), 5px 5px 20px rgb(81, 176, 224);
+  }
+  100% {
+    box-shadow: 5px 5px 20px rgb(234, 0, 255), -5px -5px 20px rgb(234, 0, 255);
+  }
+}
+@keyframes glow2 {
+  0% {
+    box-shadow: 5px 5px 40px rgb(234, 0, 255), -5px -5px 40px rgb(234, 0, 255);
+  }
+
+  50% {
+    box-shadow: 5px 5px 40px rgb(81, 176, 224), 5px 5px 40px rgb(81, 176, 224);
+  }
+  100% {
+    box-shadow: 5px 5px 40px rgb(234, 0, 255), -5px -5px 40px rgb(234, 0, 255);
+  }
+}

@@ -4,16 +4,9 @@ import "./footerCSS.css";
 function Footer() {
   return (
     <div className="footer">
-      <div className="col">
-        <p>Test</p>
-      </div>
-
-      <div className="col">
-        <p>jeszcze raz</p>
-      </div>
-      <div className="col">
-        <p>stopni</p>
-      </div>
+      <a className="link" href="#">
+        Top of Page
+      </a>
     </div>
   );
 }
