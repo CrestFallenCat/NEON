@@ -3,7 +3,9 @@
 body {
   color: white;
 }
-
+p {
+  font-size: 1.2em;
+}
 .icons:last-child {
   right: 0;
 }
@@ -21,18 +23,26 @@ body {
     "img img"
     "p p";
   gap: 10px;
-  border: 1px pink solid;
-  margin-left: 40px;
-  margin-right: 40px;
+
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 130px;
+  margin-bottom: 130px;
+  border-radius: 20px;
 }
 
 #softwareTitle {
   grid-area: title;
   text-align: center;
+  font-size: 40px;
 }
 #opis {
   grid-area: opis;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.438);
+  padding-right: 150px;
+  padding-left: 150px;
+  box-shadow: 0px 0px 60px rgb(0, 0, 0);
 }
 #mid,
 #open {
@@ -42,14 +52,19 @@ body {
 
 .mid {
   width: auto;
-  border: 1px solid rgb(49, 241, 255);
-  margin: 20px;
+  border: 1px solid rgb(194, 251, 255);
+  margin-right: 10%;
+  margin-left: 20%;
+  box-shadow: 0 0 30px rgb(79, 208, 251), inset 0 0 15px rgb(79, 208, 251);
 }
 
 .open {
   width: auto;
-  border: 1px solid rgb(255, 49, 224);
-  margin: 20px;
+  border: 1px solid rgb(255, 197, 246);
+  margin: 2%;
+  margin-right: 20%;
+  margin-left: 10%;
+  box-shadow: 0 0 30px rgb(218, 89, 230), inset 0 0 15px rgb(218, 89, 230);
 }
 #midP,
 #openP {
@@ -62,8 +77,10 @@ body {
 .open {
   border-radius: 50px;
   text-align: center;
-
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 5%;
+  margin-top: 50px;
+  margin-bottom: 80px;
 }
 
 @media screen and (max-width: 900px) {
@@ -81,8 +98,8 @@ body {
   background-color: rgb(0, 0, 0, 0.7);
   padding-top: 60px;
   padding-bottom: 60px;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 150px;
+  margin-bottom: 150px;
   text-align: center;
   box-shadow: 0px -30px 70px rgba(0, 0, 0, 0.8),
     0px 30px 70px rgba(0, 0, 0, 0.8);
@@ -91,7 +108,7 @@ body {
 #quote {
   font-family: "Bad Script", cursive;
   letter-spacing: 2px;
-  font-size: 25px;
+  font-size: 1.5em;
 }
 
 .play-game {
@@ -102,6 +119,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#play-para {
+  margin-top: 5%;
 }
 #play-button {
   display: inline-block;
@@ -116,11 +136,10 @@ body {
 
   cursor: pointer;
 
-  animation: glow 5s infinite;
-  transition: box-shadow 0.5s ease-in-out;
+  animation: glow 4s infinite;
 }
 #play-button:hover {
-  animation: glow2 1s infinite;
+  animation: pulse 2s infinite;
 }
 
 @keyframes glow {
@@ -135,15 +154,14 @@ body {
     box-shadow: 5px 5px 20px rgb(234, 0, 255), -5px -5px 20px rgb(234, 0, 255);
   }
 }
-@keyframes glow2 {
-  0% {
-    box-shadow: 5px 5px 40px rgb(234, 0, 255), -5px -5px 40px rgb(234, 0, 255);
-  }
 
-  50% {
-    box-shadow: 5px 5px 40px rgb(81, 176, 224), 5px 5px 40px rgb(81, 176, 224);
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(234, 0, 255, 0.7), 0 0 0 0 rgba(234, 0, 255, 0.7),
+      0 0 0 0 rgba(234, 0, 255, 0.7);
   }
   100% {
-    box-shadow: 5px 5px 40px rgb(234, 0, 255), -5px -5px 40px rgb(234, 0, 255);
+    box-shadow: 0 0 0 20px rgba(234, 0, 255, 0), 0 0 0 40px rgba(234, 0, 255, 0),
+      0 0 0 60px rgba(234, 0, 255, 0), 0 0 0 80px rgba(234, 0, 255, 0);
   }
 }

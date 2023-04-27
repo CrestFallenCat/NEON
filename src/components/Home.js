@@ -52,6 +52,7 @@ export function Home() {
         </div>
         <div className="softwareGrid">
           <h2 id="softwareTitle">The software</h2>
+
           <p id="opis">
             There are a number of companies that have created these art
             generating programs some are more powerful than others.Some of the
@@ -115,7 +116,12 @@ export function Home() {
           created by a computer or by me, a real life human..
         </p>
         <div className="only-button">
-          <a
+          <motion.a
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 2 },
+            }}
+            whileTap={{ scale: 0.8 }}
             className="play-game"
             id="play-button"
             onClick={() => {
@@ -123,7 +129,7 @@ export function Home() {
             }}
           >
             Play!
-          </a>
+          </motion.a>
         </div>
       </motion.div>
     </AnimatePresence>
