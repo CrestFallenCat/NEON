@@ -29,7 +29,7 @@ export function Home() {
         onAnimationComplete={handleAnimationComplete}
       >
         <div className="intro">
-          <h1>Ai Art: what?</h1>
+          <h1 id="home-title">Ai Art: what?</h1>
           <p>
             AI or artificial intelligence has become increasingly powerful over
             the years and its only getting more advanced as time goes on such is
@@ -43,6 +43,15 @@ export function Home() {
             Our ability to express emotion though these mediums is found nowhere
             else, until now.
           </p>
+          <p>what does this mean for creative humans?</p>
+          <a
+            className="whatNext"
+            onClick={() => {
+              navigate("/Next");
+            }}
+          >
+            Find out
+          </a>
           <p>
             Algorithms trained on huge amounts of data can now be used to create
             a completely original piece of artwork, just from a short prompt
@@ -115,6 +124,7 @@ export function Home() {
           I present to you, a game, can you tell the difference between art
           created by a computer or by me, a real life human..
         </p>
+
         <div className="only-button">
           <motion.a
             whileHover={{

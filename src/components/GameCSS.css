@@ -1,0 +1,8 @@
+.the-images {
+  display: inline-block;
+}
+
+.human,
+.machine {
+  height: 400px;
+}
