@@ -43,15 +43,17 @@ export function Home() {
             Our ability to express emotion though these mediums is found nowhere
             else, until now.
           </p>
-          <p>what does this mean for creative humans?</p>
-          <a
-            className="whatNext"
-            onClick={() => {
-              navigate("/Next");
-            }}
-          >
-            Find out
-          </a>
+          <div className="move-to-page-next">
+            <p>What does this mean for creative humans?</p>
+            <a
+              id="find-out"
+              onClick={() => {
+                navigate("/Next");
+              }}
+            >
+              Find out
+            </a>
+          </div>
           <p>
             Algorithms trained on huge amounts of data can now be used to create
             a completely original piece of artwork, just from a short prompt

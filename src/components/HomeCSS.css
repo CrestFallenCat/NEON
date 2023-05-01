@@ -8,7 +8,7 @@ p {
 }
 
 #home-title {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.767);
 
   width: max-content;
   position: relative;
@@ -25,12 +25,12 @@ p {
 
 #home-title::before {
   background-color: rgb(0, 0, 0);
-  animation: typewriter 3s steps(13) forwards;
+  animation: typewriter 2s steps(13) forwards;
 }
 #home-title::after {
   width: 0.124em;
   background: rgb(255, 255, 255);
-  animation: typewriter 3s steps(13) forwards, blink 750ms steps(13) infinite;
+  animation: typewriter 2s steps(13) forwards, blink 750ms steps(13) infinite;
 }
 @keyframes typewriter {
   to {
@@ -63,6 +63,32 @@ p {
   margin-top: 130px;
   margin-bottom: 130px;
   border-radius: 20px;
+}
+.move-to-page-next {
+  text-align: center;
+  margin: 6%;
+}
+.move-to-page-next p {
+  color: rgb(143, 255, 255);
+  margin-bottom: 50px;
+}
+#find-out {
+  cursor: pointer;
+  padding: 2%;
+  animation: pulsate 10s ease-in-out infinite;
+  box-shadow: 0 0 0 rgba(255, 105, 180, 1);
+}
+@keyframes pulsate {
+  0% {
+    box-shadow: 5px 10px 10px rgb(110, 6, 120), -5px -10px 10px rgb(109, 5, 118);
+  }
+
+  50% {
+    box-shadow: 5px 5px 10px rgb(81, 176, 224), 5px 5px 10px rgb(141, 81, 224);
+  }
+  100% {
+    box-shadow: 5px 5px 10px rgb(234, 0, 255), -5px -5px 10px rgb(234, 0, 255);
+  }
 }
 
 #softwareTitle {
