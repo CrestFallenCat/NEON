@@ -16,6 +16,12 @@ export function Home() {
   const handleAnimationComplete = () => {
     setShowCarousel(true);
   };
+  const handleClickScroll = () => {
+    const caraScroll = document.getElementById("name");
+    if (caraScroll) {
+      caraScroll.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <AnimatePresence mode="wait" onExitComplete={() => setShowCarousel(false)}>
@@ -37,29 +43,25 @@ export function Home() {
             logic games like chess for many years already. One domain previously
             unaffected by such things is the creative world.
           </p>
-          <p>
-            Art, design and illustration have always been the product of very
-            real very human minds. Something that sets us apart as a species.
-            Our ability to express emotion though these mediums is found nowhere
-            else, until now.
-          </p>
-          <div className="move-to-page-next">
-            <p>What does this mean for creative humans?</p>
-            <a
-              id="find-out"
-              onClick={() => {
-                navigate("/Next");
-              }}
-            >
-              Find out
-            </a>
+          <div className="para">
+            <p id="first" className="intro-p">
+              Art, design and illustration have always been the product of very
+              real very human minds. Something that sets us apart as a species.
+              Our ability to express emotion though these mediums is found
+              nowhere else, until now.
+            </p>
+            <div className="move-to-page-next">
+              <a id="find-out" onClick={handleClickScroll}>
+                Show me the pictures
+              </a>
+            </div>
+            <p id="second" className="intro-p">
+              Algorithms trained on huge amounts of data can now be used to
+              create a completely original piece of artwork, just from a short
+              prompt written by a human. It will produce this for you in a
+              matter of seconds <strong>and</strong> it will be stunning.
+            </p>
           </div>
-          <p>
-            Algorithms trained on huge amounts of data can now be used to create
-            a completely original piece of artwork, just from a short prompt
-            written by a human. It will produce this for you in a matter of
-            seconds <strong>and</strong> it will be stunning.
-          </p>
         </div>
         <div className="softwareGrid">
           <h2 id="softwareTitle">The software</h2>
@@ -99,11 +101,12 @@ export function Home() {
             By far, the greatest danger of Artificial Intelligence is that
             people conclude too early that they understand it.{" "}
           </q>{" "}
-          <span> - Eliezer Yudkowsky</span>
+          <span id="name"> - Eliezer Yudkowsky</span>
         </div>
         {showCarousel && (
           <motion.div
             key="carousel"
+            id="caro"
             className="carousel-container"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

@@ -22,7 +22,9 @@ p {
   bottom: 0;
   left: 0;
 }
-
+.para {
+  display: inline-flex;
+}
 #home-title::before {
   background-color: rgb(0, 0, 0);
   animation: typewriter 2s steps(13) forwards;
@@ -30,7 +32,7 @@ p {
 #home-title::after {
   width: 0.124em;
   background: rgb(255, 255, 255);
-  animation: typewriter 2s steps(13) forwards, blink 750ms steps(13) infinite;
+  animation: typewriter 2s steps(13) forwards, blink 950ms steps(13) infinite;
 }
 @keyframes typewriter {
   to {
@@ -49,6 +51,25 @@ p {
   margin-bottom: 60px;
   z-index: 10;
 }
+.intro-p {
+  /* position: relative; */
+  max-width: 500px;
+  text-align: center;
+  margin-bottom: 150px;
+}
+#first {
+  left: 10%;
+}
+#second {
+  left: 80%;
+}
+
+#find-out {
+  left: 44%;
+  cursor: pointer;
+  /* padding: 2%; */
+  /* border: 1px white solid; */
+}
 .softwareGrid {
   display: grid;
   grid-template-areas:
@@ -60,35 +81,9 @@ p {
 
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: 130px;
+  margin-top: 6%;
   margin-bottom: 130px;
   border-radius: 20px;
-}
-.move-to-page-next {
-  text-align: center;
-  margin: 6%;
-}
-.move-to-page-next p {
-  color: rgb(143, 255, 255);
-  margin-bottom: 50px;
-}
-#find-out {
-  cursor: pointer;
-  padding: 2%;
-  animation: pulsate 10s ease-in-out infinite;
-  box-shadow: 0 0 0 rgba(255, 105, 180, 1);
-}
-@keyframes pulsate {
-  0% {
-    box-shadow: 5px 10px 10px rgb(110, 6, 120), -5px -10px 10px rgb(109, 5, 118);
-  }
-
-  50% {
-    box-shadow: 5px 5px 10px rgb(81, 176, 224), 5px 5px 10px rgb(141, 81, 224);
-  }
-  100% {
-    box-shadow: 5px 5px 10px rgb(234, 0, 255), -5px -5px 10px rgb(234, 0, 255);
-  }
 }
 
 #softwareTitle {
