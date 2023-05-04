@@ -36,7 +36,7 @@ export function Home() {
       >
         <div className="intro">
           <h1 id="home-title">Ai Art: what?</h1>
-          <p>
+          <p id="start">
             AI or artificial intelligence has become increasingly powerful over
             the years and its only getting more advanced as time goes on such is
             the nature of any technology. Its been better than us at maths and
@@ -50,7 +50,7 @@ export function Home() {
               Our ability to express emotion though these mediums is found
               nowhere else, until now.
             </p>
-            <div className="move-to-page-next">
+            <div className="move-to-page-next ">
               <a id="find-out" onClick={handleClickScroll}>
                 Show me the pictures
               </a>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import { motion } from "framer-motion";
 import "./GameCSS.css";
 import birb from "./pics/birb.jpg";
@@ -11,6 +12,19 @@ import smert from "./pics/smert.JPG";
 import planet from "./pics/planet.png";
 import mood from "./pics/mood.jpg";
 import synthship from "./pics/synthShip.png";
+
+const images = [
+  { src: birb, isAi: false },
+  { src: oldMan, isAi: true },
+  { src: froge, isAi: false },
+  { src: sekiro, isAi: true },
+  { src: monster, isAi: false },
+  { src: kura, isAi: false },
+  { src: smert, isAi: true },
+  { src: planet, isAi: true },
+  { src: mood, isAi: false },
+  { src: synthship, isAi: true },
+];
 
 export function Game() {
   return (
@@ -33,10 +47,10 @@ export function Game() {
         <img className="machine" src={sekiro}></img>
         <img className="machine" src={smert}></img>
         <img className="human" src={kura}></img>
+        <img className="human" src={monster}></img>
         <img className="machine" src={planet}></img>
         <img className="human" src={mood}></img>
         <img className="machine" src={synthship}></img>
-        <img className="human" src={monster}></img>
         <img className="human" src={froge}></img>
         <img className="machine" src={oldMan}></img>
       </div>
