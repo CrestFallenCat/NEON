@@ -13,20 +13,37 @@ import planet from "./pics/planet.png";
 import mood from "./pics/mood.jpg";
 import synthship from "./pics/synthShip.png";
 
-const images = [
-  { src: birb, isAi: false },
-  { src: oldMan, isAi: true },
-  { src: froge, isAi: false },
-  { src: sekiro, isAi: true },
-  { src: monster, isAi: false },
-  { src: kura, isAi: false },
-  { src: smert, isAi: true },
-  { src: planet, isAi: true },
-  { src: mood, isAi: false },
-  { src: synthship, isAi: true },
-];
+// const images = [
+//   { src: birb, isAi: false },
+//   { src: oldMan, isAi: true },
+//   { src: froge, isAi: false },
+//   { src: sekiro, isAi: true },
+//   { src: monster, isAi: false },
+//   { src: kura, isAi: false },
+//   { src: smert, isAi: true },
+//   { src: planet, isAi: true },
+//   { src: mood, isAi: false },
+//   { src: synthship, isAi: true },
+// ];
 
 export function Game() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const images = [
+    birb,
+    sekiro,
+    smert,
+    kura,
+    planet,
+    mood,
+    synthship,
+    monster,
+    froge,
+    oldMan,
+  ];
+
+  const currentImage = images[currentIndex];
+
   return (
     <motion.div
       initial={{ width: 0 }}
@@ -43,16 +60,19 @@ export function Game() {
         <p id="counter"> /10 Correct</p>
       </div>
       <div className="the-images">
-        <img className="human" src={birb}></img>
-        <img className="machine" src={sekiro}></img>
-        <img className="machine" src={smert}></img>
-        <img className="human" src={kura}></img>
-        <img className="human" src={monster}></img>
-        <img className="machine" src={planet}></img>
-        <img className="human" src={mood}></img>
-        <img className="machine" src={synthship}></img>
-        <img className="human" src={froge}></img>
-        <img className="machine" src={oldMan}></img>
+        <img
+          className={
+            currentImage === oldMan ||
+            currentImage === sekiro ||
+            currentImage === smert ||
+            currentImage === planet ||
+            currentImage === synthship
+              ? "machine"
+              : "human"
+          }
+          src={currentImage}
+          alt="current"
+        ></img>
       </div>
     </motion.div>
   );
