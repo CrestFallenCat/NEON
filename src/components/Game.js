@@ -13,21 +13,9 @@ import planet from "./pics/planet.png";
 import mood from "./pics/mood.jpg";
 import synthship from "./pics/synthShip.png";
 
-// const images = [
-//   { src: birb, isAi: false },
-//   { src: oldMan, isAi: true },
-//   { src: froge, isAi: false },
-//   { src: sekiro, isAi: true },
-//   { src: monster, isAi: false },
-//   { src: kura, isAi: false },
-//   { src: smert, isAi: true },
-//   { src: planet, isAi: true },
-//   { src: mood, isAi: false },
-//   { src: synthship, isAi: true },
-// ];
-
 export function Game() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [counter, setCounter] = useState(0);
 
   const images = [
     birb,
@@ -41,8 +29,36 @@ export function Game() {
     froge,
     oldMan,
   ];
-
+  const handleHumanClick = () => {
+    if (
+      currentImage === birb ||
+      currentImage === froge ||
+      currentImage === monster ||
+      currentImage === kura ||
+      currentImage === mood
+    ) {
+      setCounter(counter + 1);
+    }
+    setCurrentIndex(currentIndex + 1);
+  };
+  const handleAiClick = () => {
+    if (
+      currentImage === sekiro ||
+      currentImage === smert ||
+      currentImage === planet ||
+      currentImage === synthship ||
+      currentImage === oldMan
+    ) {
+      setCounter(counter + 1);
+    }
+    setCurrentIndex(currentIndex + 1);
+  };
   const currentImage = images[currentIndex];
+
+  const handleResetClick = () => {
+    setCounter(0);
+    setCurrentIndex(0);
+  };
 
   return (
     <motion.div
@@ -52,12 +68,12 @@ export function Game() {
     >
       <h1>Ai or Human?</h1>
       <div className="buttons">
-        <button>Human</button>
-        <button>AI</button>
-        <button>Reset</button>
+        <button onClick={handleHumanClick}>Human</button>
+        <button onClick={handleAiClick}>AI</button>
+        <button onClick={handleResetClick}>Reset</button>
       </div>
       <div className="counter-container">
-        <p id="counter"> /10 Correct</p>
+        <p id="counter"> {counter}/10 Correct</p>
       </div>
       <div className="the-images">
         <img

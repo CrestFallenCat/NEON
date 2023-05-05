@@ -65,10 +65,23 @@ p {
 }
 
 .move-to-page-next {
+  position: relative;
   text-align: center;
-  transform: translateY(15px);
+}
+#find-out {
+  cursor: pointer;
+  padding: 20px;
+  display: inline-block;
+  border: 1px solid white;
+  width: 200px;
 }
 
+#brain {
+  margin: 2%;
+  position: relative;
+  display: inline-block;
+  max-width: 350px;
+}
 .softwareGrid {
   display: grid;
   grid-template-areas:
@@ -80,7 +93,7 @@ p {
 
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: 6%;
+  margin-top: 20px;
   margin-bottom: 130px;
   border-radius: 20px;
 }
