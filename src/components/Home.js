@@ -42,26 +42,28 @@ export function Home() {
             the nature of any technology. Its been better than us at maths and
             logic games like chess for many years already. One domain previously
             unaffected by such things is the creative world.
-            <div className="move-to-page-next ">
-              <a id="find-out" onClick={handleClickScroll}>
-                Show me the AI
-              </a>
-            </div>
           </p>
           <div className="para">
-            <p id="first" className="intro-p">
-              Art, design and illustration have always been the product of very
-              real very human minds. Something that sets us apart as a species.
-              Our ability to express emotion though these mediums is found
-              nowhere else, until now.
-            </p>
+            <div className="para2">
+              <p id="first" className="intro-p">
+                Art, design and illustration have always been the product of
+                very real very human minds. Something that sets us apart as a
+                species. Our ability to express emotion though these mediums is
+                found nowhere else, until now.
+              </p>
+              <div className="move-to-page-next ">
+                <a id="find-out" onClick={handleClickScroll}>
+                  Show me the AI
+                </a>
+              </div>
+              <p id="second" className="intro-p">
+                Algorithms trained on huge amounts of data can now be used to
+                create a completely original piece of artwork, just from a short
+                prompt written by a human. It will produce this for you in a
+                matter of seconds <strong>and</strong> it will be stunning.
+              </p>
+            </div>
             <img id="brain" src={Brain}></img>
-            <p id="second" className="intro-p">
-              Algorithms trained on huge amounts of data can now be used to
-              create a completely original piece of artwork, just from a short
-              prompt written by a human. It will produce this for you in a
-              matter of seconds <strong>and</strong> it will be stunning.
-            </p>
           </div>
         </div>
         <div className="softwareGrid">

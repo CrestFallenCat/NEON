@@ -1,8 +1,16 @@
 .the-images {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .human,
 .machine {
-  height: 400px;
+  position: relative;
+  max-width: 720px;
+  margin-bottom: 10%;
+}
+
+.counter-container {
+  text-align: center;
 }

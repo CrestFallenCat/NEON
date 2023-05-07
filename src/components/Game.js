@@ -67,28 +67,34 @@ export function Game() {
       exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
     >
       <h1>Ai or Human?</h1>
-      <div className="buttons">
-        <button onClick={handleHumanClick}>Human</button>
-        <button onClick={handleAiClick}>AI</button>
-        <button onClick={handleResetClick}>Reset</button>
-      </div>
       <div className="counter-container">
         <p id="counter"> {counter}/10 Correct</p>
       </div>
       <div className="the-images">
-        <img
-          className={
-            currentImage === oldMan ||
-            currentImage === sekiro ||
-            currentImage === smert ||
-            currentImage === planet ||
-            currentImage === synthship
-              ? "machine"
-              : "human"
-          }
-          src={currentImage}
-          alt="current"
-        ></img>
+        {currentIndex < images.length ? (
+          <img
+            className={
+              currentImage === oldMan ||
+              currentImage === sekiro ||
+              currentImage === smert ||
+              currentImage === planet ||
+              currentImage === synthship
+                ? "machine"
+                : "human"
+            }
+            src={currentImage}
+            alt="current"
+          />
+        ) : (
+          <div style={{ width: "100%", height: "600px" }} />
+        )}
+      </div>
+      <div className="buttons">
+        <button onClick={handleHumanClick}>Human</button>
+        {currentIndex >= images.length && (
+          <button onClick={handleResetClick}>Reset</button>
+        )}
+        <button onClick={handleAiClick}>AI</button>
       </div>
     </motion.div>
   );

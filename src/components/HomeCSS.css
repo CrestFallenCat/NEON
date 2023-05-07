@@ -25,6 +25,9 @@ p {
 .para {
   display: inline-flex;
 }
+.para2 {
+  max-width: 850px;
+}
 #home-title::before {
   background-color: rgb(0, 0, 0);
   animation: typewriter 2s steps(13) forwards;
@@ -55,13 +58,18 @@ p {
   margin-bottom: 60px;
   z-index: 10;
 }
-
-#first,
-#second,
+#first {
+  margin-top: 40px;
+  margin-bottom: 70px;
+}
+#second {
+  margin-top: 70px;
+}
 .move-to-page-next,
+.para2,
 #start,
 #home-title {
-  margin: 2%;
+  margin-left: 2%;
 }
 
 .move-to-page-next {
@@ -77,10 +85,13 @@ p {
 }
 
 #brain {
-  margin: 2%;
+  /* margin: 2%; */
   position: relative;
   display: inline-block;
-  max-width: 350px;
+  top: -30px;
+  left: 20%;
+
+  max-width: 400px;
 }
 .softwareGrid {
   display: grid;
