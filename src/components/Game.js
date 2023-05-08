@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import Confetti from "./Confetti";
 import { motion } from "framer-motion";
 import "./GameCSS.css";
 import birb from "./pics/birb.jpg";
@@ -16,6 +16,7 @@ import synthship from "./pics/synthShip.png";
 export function Game() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [counter, setCounter] = useState(0);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const images = [
     birb,
@@ -60,13 +61,21 @@ export function Game() {
     setCurrentIndex(0);
   };
 
+  useEffect(() => {
+    if (currentIndex >= images.length) {
+      setShowConfetti(true);
+    } else {
+      setShowConfetti(false);
+    }
+  }, [currentIndex, images.length]);
+
   return (
     <motion.div
       initial={{ width: 0 }}
       animate={{ width: "100%" }}
       exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
     >
-      <h1>Ai or Human?</h1>
+      <h1 id="title">Ai or Human?</h1>
       <div className="counter-container">
         <p id="counter"> {counter}/10 Correct</p>
       </div>
@@ -89,12 +98,21 @@ export function Game() {
           <div style={{ width: "100%", height: "600px" }} />
         )}
       </div>
+      {/* confetti falls down when after the last images has been shown and the game is over */}
+      {showConfetti && <Confetti />}
+
       <div className="buttons">
-        <button onClick={handleHumanClick}>Human</button>
-        {currentIndex >= images.length && (
-          <button onClick={handleResetClick}>Reset</button>
-        )}
-        <button onClick={handleAiClick}>AI</button>
+        <button id="humanButton" onClick={handleHumanClick}>
+          Human
+        </button>
+
+        <button id="resetButton" onClick={handleResetClick}>
+          Reset
+        </button>
+
+        <button id="aiButton" onClick={handleAiClick}>
+          AI
+        </button>
       </div>
     </motion.div>
   );
