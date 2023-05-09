@@ -13,10 +13,17 @@ import planet from "./pics/planet.png";
 import mood from "./pics/mood.jpg";
 import synthship from "./pics/synthShip.png";
 
+import human from "./pics/humanButton.png";
+import ai from "./pics/aiButton.png";
+import reset from "./pics/resetButton.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
+
 export function Game() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [counter, setCounter] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [option, setOption] = useState("");
 
   const images = [
     birb,
@@ -31,34 +38,47 @@ export function Game() {
     oldMan,
   ];
   const handleHumanClick = () => {
-    if (
-      currentImage === birb ||
-      currentImage === froge ||
-      currentImage === monster ||
-      currentImage === kura ||
-      currentImage === mood
-    ) {
-      setCounter(counter + 1);
-    }
+    setOption("human");
+    checkAnswer("human");
     setCurrentIndex(currentIndex + 1);
   };
+
   const handleAiClick = () => {
-    if (
-      currentImage === sekiro ||
-      currentImage === smert ||
-      currentImage === planet ||
-      currentImage === synthship ||
-      currentImage === oldMan
-    ) {
-      setCounter(counter + 1);
-    }
+    setOption("ai");
+    checkAnswer("ai");
     setCurrentIndex(currentIndex + 1);
   };
+
+  const checkAnswer = (selectedOption) => {
+    if (selectedOption === "human") {
+      if (
+        currentImage === birb ||
+        currentImage === froge ||
+        currentImage === monster ||
+        currentImage === kura ||
+        currentImage === mood
+      ) {
+        setCounter(counter + 1);
+      }
+    } else if (selectedOption === "ai") {
+      if (
+        currentImage === sekiro ||
+        currentImage === smert ||
+        currentImage === planet ||
+        currentImage === synthship ||
+        currentImage === oldMan
+      ) {
+        setCounter(counter + 1);
+      }
+    }
+  };
+
   const currentImage = images[currentIndex];
 
   const handleResetClick = () => {
     setCounter(0);
     setCurrentIndex(0);
+    setOption("");
   };
 
   useEffect(() => {
@@ -80,6 +100,34 @@ export function Game() {
         <p id="counter"> {counter}/10 Correct</p>
       </div>
       <div className="the-images">
+        <div className="the-icons">
+          {option === "human" ? (
+            <FontAwesomeIcon
+              icon={
+                currentImage === birb ||
+                currentImage === froge ||
+                currentImage === monster ||
+                currentImage === kura ||
+                currentImage === mood
+                  ? faCheck
+                  : faXmark
+              }
+            />
+          ) : option === "ai" ? (
+            <FontAwesomeIcon
+              icon={
+                currentImage === sekiro ||
+                currentImage === smert ||
+                currentImage === planet ||
+                currentImage === synthship ||
+                currentImage === oldMan
+                  ? faCheck
+                  : faXmark
+              }
+            />
+          ) : null}
+        </div>
+
         {currentIndex < images.length ? (
           <img
             className={
@@ -95,25 +143,18 @@ export function Game() {
             alt="current"
           />
         ) : (
-          <div style={{ width: "100%", height: "600px" }} />
+          <div style={{ width: "100%", height: "1px" }} />
         )}
+      </div>
+      <div className="buttons">
+        <img src={human} id="humanButton" onClick={handleHumanClick}></img>
+
+        <img src={reset} id="resetButton" onClick={handleResetClick}></img>
+
+        <img src={ai} id="aiButton" onClick={handleAiClick}></img>
       </div>
       {/* confetti falls down when after the last images has been shown and the game is over */}
       {showConfetti && <Confetti />}
-
-      <div className="buttons">
-        <button id="humanButton" onClick={handleHumanClick}>
-          Human
-        </button>
-
-        <button id="resetButton" onClick={handleResetClick}>
-          Reset
-        </button>
-
-        <button id="aiButton" onClick={handleAiClick}>
-          AI
-        </button>
-      </div>
     </motion.div>
   );
 }

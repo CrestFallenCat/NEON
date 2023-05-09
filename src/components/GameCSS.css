@@ -2,32 +2,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10%;
 }
-
+.the-icons {
+  z-index: 2;
+}
 .human,
 .machine {
-  position: relative;
+  position: absolute;
   max-width: 720px;
-  margin-bottom: 10%;
   border: 2px solid rgb(157, 224, 255);
   border-radius: 5%;
   box-shadow: 0 0 100px rgba(79, 208, 251, 0.618);
+  top: 25%;
+  z-index: 1;
 }
 
 .counter-container {
   text-align: center;
 }
+
 .buttons {
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-}
-#humanButton,
-#aiButton,
-#resetButton {
-  margin-right: 400px;
+  position: relative;
+  top: 30%;
+  margin-bottom: 20%;
 }
 
+#humanButton,
+#resetButton {
+  margin-right: 13%;
+}
+
+#humanButton,
+#resetButton,
+#aiButton {
+  max-width: 430px;
+  cursor: pointer;
+}
 #title {
   background-color: rgba(0, 0, 0, 0.767);
 
