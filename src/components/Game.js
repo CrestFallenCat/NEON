@@ -61,6 +61,7 @@ export function Game() {
         currentImage === mood
       ) {
         setShowTick(true);
+        setCounter(counter + 1);
       } else {
         setShowCross(true);
       }
@@ -73,6 +74,7 @@ export function Game() {
         currentImage === oldMan
       ) {
         setShowTick(true);
+        setCounter(counter + 1);
       } else {
         setShowCross(true);
       }
@@ -82,7 +84,7 @@ export function Game() {
     setTimeout(() => {
       setShowTick(false);
       setShowCross(false);
-    }, 1000);
+    }, 500);
   };
 
   const currentImage = images[currentIndex];
@@ -132,7 +134,7 @@ export function Game() {
             alt="current"
           />
         ) : (
-          <div style={{ width: "100%", height: "1px" }} />
+          <div style={{ width: "100%", height: "0px" }} />
         )}
       </div>
       <div className="buttons">

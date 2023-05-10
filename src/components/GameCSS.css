@@ -4,6 +4,7 @@
   align-items: center;
   margin-bottom: 15%;
 }
+
 .the-icons {
   z-index: 2;
 }
@@ -16,6 +17,19 @@
   box-shadow: 0 0 100px rgba(79, 208, 251, 0.618);
   top: 25%;
   /* z-index: -1; */
+}
+.tick {
+  color: rgb(2, 235, 2);
+}
+.cross {
+  color: red;
+}
+
+.tick,
+.cross {
+  position: absolute;
+  z-index: 1;
+  font-size: 200px;
 }
 
 .counter-container {
