@@ -24,6 +24,8 @@ export function Game() {
   const [counter, setCounter] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
   const [option, setOption] = useState("");
+  const [showTick, setShowTick] = useState(false);
+  const [showCross, setShowCross] = useState(false);
 
   const images = [
     birb,
@@ -58,7 +60,9 @@ export function Game() {
         currentImage === kura ||
         currentImage === mood
       ) {
-        setCounter(counter + 1);
+        setShowTick(true);
+      } else {
+        setShowCross(true);
       }
     } else if (selectedOption === "ai") {
       if (
@@ -68,9 +72,17 @@ export function Game() {
         currentImage === synthship ||
         currentImage === oldMan
       ) {
-        setCounter(counter + 1);
+        setShowTick(true);
+      } else {
+        setShowCross(true);
       }
     }
+
+    // Hide the tick and cross after 1 second
+    setTimeout(() => {
+      setShowTick(false);
+      setShowCross(false);
+    }, 1000);
   };
 
   const currentImage = images[currentIndex];
@@ -101,31 +113,8 @@ export function Game() {
       </div>
       <div className="the-images">
         <div className="the-icons">
-          {option === "human" ? (
-            <FontAwesomeIcon
-              icon={
-                currentImage === birb ||
-                currentImage === froge ||
-                currentImage === monster ||
-                currentImage === kura ||
-                currentImage === mood
-                  ? faCheck
-                  : faXmark
-              }
-            />
-          ) : option === "ai" ? (
-            <FontAwesomeIcon
-              icon={
-                currentImage === sekiro ||
-                currentImage === smert ||
-                currentImage === planet ||
-                currentImage === synthship ||
-                currentImage === oldMan
-                  ? faCheck
-                  : faXmark
-              }
-            />
-          ) : null}
+          {showTick && <FontAwesomeIcon icon={faCheck} className="tick" />}
+          {showCross && <FontAwesomeIcon icon={faXmark} className="cross" />}
         </div>
 
         {currentIndex < images.length ? (
@@ -147,11 +136,32 @@ export function Game() {
         )}
       </div>
       <div className="buttons">
-        <img src={human} id="humanButton" onClick={handleHumanClick}></img>
+        <img
+          src={human}
+          id="humanButton"
+          onClick={handleHumanClick}
+          style={{
+            visibility: currentIndex < images.length ? "visible" : "hidden",
+          }}
+        ></img>
 
-        <img src={reset} id="resetButton" onClick={handleResetClick}></img>
+        <img
+          src={reset}
+          id="resetButton"
+          onClick={handleResetClick}
+          style={{
+            visibility: currentIndex >= images.length ? "visible" : "hidden",
+          }}
+        ></img>
 
-        <img src={ai} id="aiButton" onClick={handleAiClick}></img>
+        <img
+          src={ai}
+          id="aiButton"
+          onClick={handleAiClick}
+          style={{
+            visibility: currentIndex < images.length ? "visible" : "hidden",
+          }}
+        ></img>
       </div>
       {/* confetti falls down when after the last images has been shown and the game is over */}
       {showConfetti && <Confetti />}
