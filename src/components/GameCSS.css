@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap");
+
 .the-images {
   display: flex;
   justify-content: center;
@@ -6,7 +8,9 @@
 }
 
 .the-icons {
+  position: absolute;
   z-index: 2;
+  top: 600px;
 }
 .human,
 .machine {
@@ -16,7 +20,6 @@
   border-radius: 5%;
   box-shadow: 0 0 100px rgba(79, 208, 251, 0.618);
   top: 25%;
-  /* z-index: -1; */
 }
 .tick {
   color: rgb(2, 235, 2);
@@ -27,18 +30,37 @@
 
 .tick,
 .cross {
-  position: absolute;
   z-index: 1;
-  font-size: 200px;
+  font-size: 350px;
+  animation: fadeOut 0.7s ease-out;
 }
 
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .counter-container {
+  position: relative;
   text-align: center;
+  top: -20px;
 }
-
+.confetti {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#counter {
+  font-family: "Dosis", sans-serif;
+  font-size: 35px;
+}
 .buttons {
   position: relative;
-  top: 30%;
+
   margin-bottom: 20%;
 }
 
@@ -46,7 +68,9 @@
 #resetButton {
   margin-right: 13%;
 }
-
+#resetButton {
+  right: -2%;
+}
 #humanButton {
   margin-left: 2%;
 }
@@ -54,7 +78,9 @@
 #humanButton,
 #resetButton,
 #aiButton {
-  max-width: 430px;
+  position: relative;
+  top: -30px;
+  max-width: 400px;
   cursor: pointer;
 }
 #title {

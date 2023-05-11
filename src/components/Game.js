@@ -84,7 +84,7 @@ export function Game() {
     setTimeout(() => {
       setShowTick(false);
       setShowCross(false);
-    }, 500);
+    }, 600);
   };
 
   const currentImage = images[currentIndex];
@@ -109,6 +109,8 @@ export function Game() {
       animate={{ width: "100%" }}
       exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
     >
+      {showConfetti && <Confetti />}
+
       <h1 id="title">Ai or Human?</h1>
       <div className="counter-container">
         <p id="counter"> {counter}/10 Correct</p>
@@ -166,7 +168,6 @@ export function Game() {
         ></img>
       </div>
       {/* confetti falls down when after the last images has been shown and the game is over */}
-      {showConfetti && <Confetti />}
     </motion.div>
   );
 }

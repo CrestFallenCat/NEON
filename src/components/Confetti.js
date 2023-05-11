@@ -3,8 +3,8 @@ import ReactConfetti from "react-confetti";
 
 const Confetti = () => {
   const [windowDimension, setDimension] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: 1750 + "px",
+    height: 1500 + "px",
   });
   const detectSize = () => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
@@ -17,7 +17,7 @@ const Confetti = () => {
     };
   }, [windowDimension]);
   return (
-    <div>
+    <div className="con">
       <ReactConfetti
         width={windowDimension.width}
         height={windowDimension.height}
