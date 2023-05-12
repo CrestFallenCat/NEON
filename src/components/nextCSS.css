@@ -1,0 +1,25 @@
+#title {
+  background-color: rgba(0, 0, 0, 0.767);
+
+  width: max-content;
+  position: relative;
+}
+#title::before,
+#title::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#title::before {
+  background-color: rgb(0, 0, 0);
+  animation: typewriter 2s steps(13) forwards;
+}
+#title::after {
+  width: 0.124em;
+  background: rgb(255, 255, 255);
+  animation: typewriter 2s steps(13) forwards, blink 950ms steps(13) infinite;
+}

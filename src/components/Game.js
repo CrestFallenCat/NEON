@@ -15,6 +15,7 @@ import synthship from "./pics/synthShip.png";
 
 import human from "./pics/humanButton.png";
 import ai from "./pics/aiButton.png";
+import aiLeft from "./pics/ai-left.png";
 import reset from "./pics/resetButton.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -34,8 +35,8 @@ export function Game() {
     kura,
     planet,
     mood,
-    synthship,
     monster,
+    synthship,
     froge,
     oldMan,
   ];
@@ -115,57 +116,59 @@ export function Game() {
       <div className="counter-container">
         <p id="counter"> {counter}/10 Correct</p>
       </div>
-      <div className="the-images">
-        <div className="the-icons">
-          {showTick && <FontAwesomeIcon icon={faCheck} className="tick" />}
-          {showCross && <FontAwesomeIcon icon={faXmark} className="cross" />}
+      <div className="the-game">
+        <div className="the-images">
+          <div className="the-icons">
+            {showTick && <FontAwesomeIcon icon={faCheck} className="tick" />}
+            {showCross && <FontAwesomeIcon icon={faXmark} className="cross" />}
+          </div>
+
+          {currentIndex < images.length ? (
+            <img
+              className={
+                currentImage === oldMan ||
+                currentImage === sekiro ||
+                currentImage === smert ||
+                currentImage === planet ||
+                currentImage === synthship
+                  ? "machine"
+                  : "human"
+              }
+              src={currentImage}
+              alt="current"
+            />
+          ) : (
+            <div style={{ width: "100%", height: "0px" }} />
+          )}
         </div>
-
-        {currentIndex < images.length ? (
+        <div className="buttons">
           <img
-            className={
-              currentImage === oldMan ||
-              currentImage === sekiro ||
-              currentImage === smert ||
-              currentImage === planet ||
-              currentImage === synthship
-                ? "machine"
-                : "human"
-            }
-            src={currentImage}
-            alt="current"
-          />
-        ) : (
-          <div style={{ width: "100%", height: "0px" }} />
-        )}
-      </div>
-      <div className="buttons">
-        <img
-          src={human}
-          id="humanButton"
-          onClick={handleHumanClick}
-          style={{
-            visibility: currentIndex < images.length ? "visible" : "hidden",
-          }}
-        ></img>
+            src={human}
+            id="humanButton"
+            onClick={handleHumanClick}
+            style={{
+              visibility: currentIndex < images.length ? "visible" : "hidden",
+            }}
+          ></img>
 
-        <img
-          src={reset}
-          id="resetButton"
-          onClick={handleResetClick}
-          style={{
-            visibility: currentIndex >= images.length ? "visible" : "hidden",
-          }}
-        ></img>
+          <img
+            src={reset}
+            id="resetButton"
+            onClick={handleResetClick}
+            style={{
+              visibility: currentIndex >= images.length ? "visible" : "hidden",
+            }}
+          ></img>
 
-        <img
-          src={ai}
-          id="aiButton"
-          onClick={handleAiClick}
-          style={{
-            visibility: currentIndex < images.length ? "visible" : "hidden",
-          }}
-        ></img>
+          <img
+            src={ai}
+            id="aiButton"
+            onClick={handleAiClick}
+            style={{
+              visibility: currentIndex < images.length ? "visible" : "hidden",
+            }}
+          ></img>
+        </div>
       </div>
       {/* confetti falls down when after the last images has been shown and the game is over */}
     </motion.div>

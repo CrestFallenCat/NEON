@@ -23,7 +23,11 @@ p {
   left: 0;
 }
 .para {
-  display: inline-flex;
+  display: grid;
+  grid-template-areas:
+    "one brain"
+    "two brain"
+    "three brain";
 }
 .para2 {
   max-width: 850px;
@@ -59,10 +63,12 @@ p {
   z-index: 10;
 }
 #first {
+  grid-area: one;
   margin-top: 40px;
   margin-bottom: 70px;
 }
 #second {
+  grid-area: two;
   margin-top: 70px;
 }
 .move-to-page-next,
@@ -76,23 +82,62 @@ p {
   position: relative;
   text-align: center;
 }
+
 #find-out {
   cursor: pointer;
-  padding: 20px;
-  display: inline-block;
-  border: 1px solid white;
-  width: 200px;
+  grid-area: two;
+
+  background: hsla(275, 89%, 49%, 0.319);
+  padding: 20px 30px;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01);
+
+  &::after {
+    /* positions the after pseudo element within the find out button*/
+    position: absolute;
+    content: "";
+    top: 15px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    /* 90% of its original size */
+    transform: scale(0.9) translateZ(0);
+    filter: blur(30px);
+    background: linear-gradient(
+      to left,
+      #ff57bf,
+      #e4428d,
+      #8a2dc4,
+      #341cd1,
+      #500cfd,
+      #430e99,
+      #d818e9,
+      #e4428d,
+      #ff1e8f
+    );
+    background-size: 200% 200%;
+    animation: animateGlow 3.25s linear infinite;
+  }
+}
+
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 #brain {
-  /* margin: 2%; */
-  position: relative;
-  display: inline-block;
-  top: -30px;
-  left: 20%;
-
+  grid-area: brain;
+  height: auto;
   max-width: 400px;
 }
+
 .softwareGrid {
   display: grid;
   grid-template-areas:
@@ -241,6 +286,14 @@ p {
     width: calc(100% / 2);
   }
 }
+
+@media screen and (max-width: 630px) {
+  #find-out {
+    margin: 0;
+    display: inline-block;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .carousel img {
     width: 100%;
@@ -272,6 +325,12 @@ p {
   #openP {
     margin: 1%;
     max-width: 100%;
+  }
+  #brain {
+    position: relative;
+    top: 60px;
+    max-width: 100px;
+    margin: 4%;
   }
   .quote-container {
     padding-top: 10px;

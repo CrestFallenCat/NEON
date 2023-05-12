@@ -73,8 +73,15 @@
 }
 #humanButton {
   margin-left: 2%;
+  grid-area: human;
+}
+#aibutton {
+  grid-area: ai;
 }
 
+#resetButton {
+  grid-area: reset;
+}
 #humanButton,
 #resetButton,
 #aiButton {
@@ -107,4 +114,24 @@
   width: 0.124em;
   background: rgb(255, 255, 255);
   animation: typewriter 2s steps(13) forwards, blink 950ms steps(13) infinite;
+}
+
+@media screen and (max-width: 1200px) {
+  #aiButton {
+    content: url("pics/ai-left.png");
+  }
+  .human,
+  .machine {
+    right: 0;
+    margin-right: 5%;
+    grid-area: pic;
+  }
+
+  .the-game {
+    display: grid;
+    grid-template-rows:
+      "human pic"
+      "ai pic"
+      "reset pic";
+  }
 }

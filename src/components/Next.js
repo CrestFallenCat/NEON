@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import "./nextCSS.css";
 
 export function Next() {
   return (
@@ -8,6 +9,7 @@ export function Next() {
       animate={{ width: "100%" }}
       exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
     >
+      <h1 id="title">The future of the creative..</h1>
       <p>
         So what's next for us creative types? is this the end for innovation
         from humans in favour of faster and more efficient ai?
