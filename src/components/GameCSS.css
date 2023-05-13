@@ -19,7 +19,7 @@
   border: 2px solid rgb(157, 224, 255);
   border-radius: 5%;
   box-shadow: 0 0 100px rgba(79, 208, 251, 0.618);
-  top: 25%;
+  top: 30%;
 }
 .tick {
   color: rgb(2, 235, 2);
@@ -58,38 +58,49 @@
   font-family: "Dosis", sans-serif;
   font-size: 35px;
 }
-.buttons {
-  position: relative;
 
-  margin-bottom: 20%;
-}
-
-#humanButton,
-#resetButton {
-  margin-right: 13%;
-}
-#resetButton {
-  right: -2%;
+.humanAi {
+  display: inline-block;
 }
 #humanButton {
   margin-left: 2%;
-  grid-area: human;
-}
-#aibutton {
-  grid-area: ai;
+  margin-right: 13%;
 }
 
-#resetButton {
-  grid-area: reset;
+.resetButton {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.center {
+  position: absolute;
+  max-width: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.parent-reset {
+  /* z-index: -2; */
+  position: relative;
+  transform: translateY(-400px);
+}
+.buttons {
+  z-index: 2;
 }
 #humanButton,
-#resetButton,
+#aiButton {
+  max-width: 400px;
+}
+#humanButton,
+.resetButton,
 #aiButton {
   position: relative;
   top: -30px;
-  max-width: 400px;
+
   cursor: pointer;
 }
+
 #title {
   background-color: rgba(0, 0, 0, 0.767);
 
@@ -126,12 +137,17 @@
     margin-right: 5%;
     grid-area: pic;
   }
-
-  .the-game {
+  /* #resetButton {
+    position: absolute;
+    margin-right: 0;
+    left: 0;
+    max-width: 200px;
+  } */
+  /* .the-game {
     display: grid;
     grid-template-rows:
       "human pic"
       "ai pic"
       "reset pic";
-  }
+  } */
 }

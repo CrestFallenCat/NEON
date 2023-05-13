@@ -116,60 +116,60 @@ export function Game() {
       <div className="counter-container">
         <p id="counter"> {counter}/10 Correct</p>
       </div>
-      <div className="the-game">
-        <div className="the-images">
-          <div className="the-icons">
-            {showTick && <FontAwesomeIcon icon={faCheck} className="tick" />}
-            {showCross && <FontAwesomeIcon icon={faXmark} className="cross" />}
-          </div>
-
-          {currentIndex < images.length ? (
-            <img
-              className={
-                currentImage === oldMan ||
-                currentImage === sekiro ||
-                currentImage === smert ||
-                currentImage === planet ||
-                currentImage === synthship
-                  ? "machine"
-                  : "human"
-              }
-              src={currentImage}
-              alt="current"
-            />
-          ) : (
-            <div style={{ width: "100%", height: "0px" }} />
-          )}
+      {/* <div className="the-game"> */}
+      <div className="the-images">
+        <div className="the-icons">
+          {showTick && <FontAwesomeIcon icon={faCheck} className="tick" />}
+          {showCross && <FontAwesomeIcon icon={faXmark} className="cross" />}
         </div>
-        <div className="buttons">
-          <img
-            src={human}
-            id="humanButton"
-            onClick={handleHumanClick}
-            style={{
-              visibility: currentIndex < images.length ? "visible" : "hidden",
-            }}
-          ></img>
 
+        {currentIndex < images.length ? (
           <img
-            src={reset}
-            id="resetButton"
-            onClick={handleResetClick}
-            style={{
-              visibility: currentIndex >= images.length ? "visible" : "hidden",
-            }}
-          ></img>
-
-          <img
-            src={ai}
-            id="aiButton"
-            onClick={handleAiClick}
-            style={{
-              visibility: currentIndex < images.length ? "visible" : "hidden",
-            }}
-          ></img>
-        </div>
+            className={
+              currentImage === oldMan ||
+              currentImage === sekiro ||
+              currentImage === smert ||
+              currentImage === planet ||
+              currentImage === synthship
+                ? "machine"
+                : "human"
+            }
+            src={currentImage}
+            alt="current"
+          />
+        ) : (
+          <div style={{ width: "100%", height: "0px" }} />
+        )}
       </div>
+      <span className="buttons">
+        <img
+          src={human}
+          id="humanButton"
+          onClick={handleHumanClick}
+          style={{
+            visibility: currentIndex < images.length ? "visible" : "hidden",
+          }}
+        ></img>
+        <img
+          src={ai}
+          id="aiButton"
+          onClick={handleAiClick}
+          style={{
+            visibility: currentIndex < images.length ? "visible" : "hidden",
+          }}
+        ></img>
+      </span>
+      <div className="parent-reset">
+        <img
+          src={reset}
+          className="resetButton center"
+          onClick={handleResetClick}
+          style={{
+            visibility: currentIndex >= images.length ? "visible" : "hidden",
+          }}
+        ></img>
+      </div>
+      {/* </div> */}
       {/* confetti falls down when after the last images has been shown and the game is over */}
     </motion.div>
   );
