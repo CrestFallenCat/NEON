@@ -59,48 +59,6 @@
   font-size: 35px;
 }
 
-.humanAi {
-  display: inline-block;
-}
-#humanButton {
-  margin-left: 2%;
-  margin-right: 13%;
-}
-
-.resetButton {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.center {
-  position: absolute;
-  max-width: 200px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.parent-reset {
-  /* z-index: -2; */
-  position: relative;
-  transform: translateY(-400px);
-}
-.buttons {
-  z-index: 2;
-}
-#humanButton,
-#aiButton {
-  max-width: 400px;
-}
-#humanButton,
-.resetButton,
-#aiButton {
-  position: relative;
-  top: -30px;
-
-  cursor: pointer;
-}
-
 #title {
   background-color: rgba(0, 0, 0, 0.767);
 
