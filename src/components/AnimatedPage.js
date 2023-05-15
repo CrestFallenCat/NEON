@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./Home";
-import Next from "./Next";
+
 import Game from "./Game";
 import Comments from "./Comments";
 
@@ -13,7 +13,7 @@ function AnimatedPage() {
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
-        <Route path="/Next" element={<Next />} />
+
         <Route path="/Game" element={<Game />} />
         <Route path="/Comments" element={<Comments />} />
       </Routes>

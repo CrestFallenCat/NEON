@@ -1,12 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap");
 
+.container {
+  display: grid;
+  grid-template-columns: auto;
+}
+
 .the-images {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 15%;
+  /* margin-bottom: 15%; */
 }
-
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .the-icons {
   position: absolute;
   z-index: 2;
@@ -27,7 +36,30 @@
 .cross {
   color: red;
 }
+#humanButton,
+#aiButton {
+  position: relative;
+  cursor: pointer;
+  width: 250px;
+  top: 100px;
+}
 
+#humanButton {
+  right: 5%;
+}
+#aiButton {
+  left: 5%;
+}
+
+.parent-reset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 70%;
+}
+.resetButton {
+  max-width: 300px;
+}
 .tick,
 .cross {
   z-index: 1;
@@ -86,26 +118,4 @@
 }
 
 @media screen and (max-width: 1200px) {
-  #aiButton {
-    content: url("pics/ai-left.png");
-  }
-  .human,
-  .machine {
-    right: 0;
-    margin-right: 5%;
-    grid-area: pic;
-  }
-  /* #resetButton {
-    position: absolute;
-    margin-right: 0;
-    left: 0;
-    max-width: 200px;
-  } */
-  /* .the-game {
-    display: grid;
-    grid-template-rows:
-      "human pic"
-      "ai pic"
-      "reset pic";
-  } */
 }

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Confetti from "./Confetti";
+import Timer from "./Timer";
+
 import { motion } from "framer-motion";
 import "./GameCSS.css";
 import birb from "./pics/birb.jpg";
@@ -21,6 +23,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export function Game() {
+  const [startTimer, setStartTimer] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [counter, setCounter] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -40,16 +43,29 @@ export function Game() {
     froge,
     oldMan,
   ];
+
+  const handleStartTimer = () => {
+    if (startTimer === false) {
+      setStartTimer(true);
+    }
+  };
+
+  const resetCountdown = () => {
+    setStartTimer(false);
+  };
+
   const handleHumanClick = () => {
     setOption("human");
     checkAnswer("human");
     setCurrentIndex(currentIndex + 1);
+    handleStartTimer();
   };
 
   const handleAiClick = () => {
     setOption("ai");
     checkAnswer("ai");
     setCurrentIndex(currentIndex + 1);
+    handleStartTimer();
   };
 
   const checkAnswer = (selectedOption) => {
@@ -110,13 +126,13 @@ export function Game() {
       animate={{ width: "100%" }}
       exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
     >
-      {showConfetti && <Confetti />}
+      {/* {showConfetti && <Confetti />} */}
 
       <h1 id="title">Ai or Human?</h1>
       <div className="counter-container">
         <p id="counter"> {counter}/10 Correct</p>
       </div>
-      {/* <div className="the-game"> */}
+      {/* <Timer startTimer={startTimer}  /> */}
       <div className="the-images">
         <div className="the-icons">
           {showTick && <FontAwesomeIcon icon={faCheck} className="tick" />}
@@ -141,7 +157,7 @@ export function Game() {
           <div style={{ width: "100%", height: "0px" }} />
         )}
       </div>
-      <span className="buttons">
+      <div className="buttons">
         <img
           src={human}
           id="humanButton"
@@ -158,7 +174,8 @@ export function Game() {
             visibility: currentIndex < images.length ? "visible" : "hidden",
           }}
         ></img>
-      </span>
+      </div>
+
       <div className="parent-reset">
         <img
           src={reset}

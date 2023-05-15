@@ -13,9 +13,7 @@ function App() {
               {" "}
               Home
             </NavLink>
-            <NavLink id="next" to={"/Next"}>
-              What's Next
-            </NavLink>
+
             <NavLink id="game" to={"/Game"}>
               The Game
             </NavLink>
