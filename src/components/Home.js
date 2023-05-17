@@ -63,7 +63,9 @@ export function Home() {
                 matter of seconds <strong>and</strong> it will be stunning.
               </p>
             </div>
-            <img id="brain" src={Brain}></img>
+            <div className="brain-container">
+              <img id="brain" src={Brain}></img>
+            </div>
           </div>
         </div>
         <div className="softwareGrid">

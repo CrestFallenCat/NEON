@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bad+Script&display=swap");
 
 body {
+  box-sizing: border-box;
   color: white;
 }
 p {
@@ -65,11 +66,26 @@ p {
 #first {
   grid-area: one;
   margin-top: 40px;
-  margin-bottom: 70px;
+  margin-bottom: 90px;
 }
+
+#first,
+#second {
+  margin-right: 30px;
+
+  background-color: #633dd618;
+  border-radius: 10px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 10px;
+
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+
 #second {
   grid-area: two;
-  margin-top: 70px;
+  margin-top: 90px;
 }
 .move-to-page-next,
 .para2,
@@ -132,10 +148,21 @@ p {
   }
 }
 
+.brain-container {
+  width: auto;
+  display: flex;
+  align-items: center;
+}
 #brain {
+  margin-left: 10%;
   grid-area: brain;
   height: auto;
-  max-width: 400px;
+  width: 40%;
+  border: 2px solid rgb(209, 253, 255);
+  box-shadow: 0px 0px 60px rgba(82, 188, 227, 0.471);
+  border-radius: 50%;
+  padding: 8%;
+  backdrop-filter: blur(5px);
 }
 
 .softwareGrid {
@@ -290,7 +317,6 @@ p {
 @media screen and (max-width: 630px) {
   #find-out {
     margin: 0;
-    display: inline-block;
   }
 }
 
