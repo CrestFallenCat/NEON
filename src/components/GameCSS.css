@@ -8,8 +8,6 @@
 .the-images {
   display: flex;
   justify-content: center;
-  align-items: center;
-  /* margin-bottom: 15%; */
 }
 .buttons {
   display: flex;
@@ -23,8 +21,7 @@
 }
 .human,
 .machine {
-  position: absolute;
-  max-width: 720px;
+  width: 30%;
   border: 2px solid rgb(157, 224, 255);
   border-radius: 5%;
   box-shadow: 0 0 100px rgba(79, 208, 251, 0.618);
@@ -36,30 +33,56 @@
 .cross {
   color: red;
 }
+
+.buttons-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 30%;
+}
+
 #humanButton,
 #aiButton {
   position: relative;
   cursor: pointer;
-  width: 250px;
-  top: 100px;
+  width: 17%;
 }
 
 #humanButton {
-  right: 5%;
+  right: 18%;
 }
 #aiButton {
-  left: 5%;
+  left: 18%;
 }
 
 .parent-reset {
+  margin-top: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 70%;
+  margin-bottom: 30%;
 }
 .resetButton {
-  max-width: 300px;
+  border-radius: 50%;
+  border: 2px solid rgb(192, 192, 255);
+  padding: 4%;
+  font-family: "Indie Flower", cursive;
+  color: rgb(160, 250, 255);
+  background-color: rgba(0, 0, 0, 0.097);
+  cursor: pointer;
+  font-size: 120px;
+  z-index: 3;
+  transition: 0.3s;
 }
+.resetButton:hover {
+  backdrop-filter: blur(4px);
+  color: rgb(250, 150, 255);
+  border: 3px solid rgb(255, 185, 247);
+  box-shadow: 0 0 200px rgba(247, 0, 255, 0.644),
+    inset 0 0 20px rgb(247, 0, 255);
+  text-shadow: 0 0 20px rgb(195, 5, 202), 0 0 70px rgb(172, 7, 178);
+}
+
 .tick,
 .cross {
   z-index: 1;
