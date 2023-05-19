@@ -140,5 +140,14 @@
   animation: typewriter 2s steps(13) forwards, blink 950ms steps(13) infinite;
 }
 
+#human-pink {
+  color: rgb(246, 192, 255);
+  font-weight: bold;
+}
+
+#ai-blue {
+  color: rgb(128, 206, 255);
+  font-weight: bold;
+}
 @media screen and (max-width: 1200px) {
 }

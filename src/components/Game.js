@@ -23,13 +23,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export function Game() {
-  const [startTimer, setStartTimer] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [counter, setCounter] = useState(0);
+  const [timerKey, setTimerKey] = useState(0);
+
+  const [startTimer, setStartTimer] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const [option, setOption] = useState("");
   const [showTick, setShowTick] = useState(false);
   const [showCross, setShowCross] = useState(false);
+
+  const [option, setOption] = useState("");
 
   const images = [
     birb,
@@ -45,13 +48,9 @@ export function Game() {
   ];
 
   const handleStartTimer = () => {
-    if (startTimer === false) {
+    if (!startTimer) {
       setStartTimer(true);
     }
-  };
-
-  const resetCountdown = () => {
-    setStartTimer(false);
   };
 
   const handleHumanClick = () => {
@@ -110,6 +109,8 @@ export function Game() {
     setCounter(0);
     setCurrentIndex(0);
     setOption("");
+    setTimerKey((prevKey) => prevKey + 1);
+    setStartTimer(false);
   };
 
   useEffect(() => {
@@ -129,10 +130,16 @@ export function Game() {
       {/* {showConfetti && <Confetti />} */}
 
       <h1 id="title">Ai or Human?</h1>
+      <p>
+        Is the picture you see before you create by a machine or by a human? See
+        how many you can guess correctly in 15 seconds! Click the{" "}
+        <span id="human-pink">Human</span> or <span id="ai-blue">Ai </span>
+        button to begin
+      </p>
       <div className="counter-container">
         <p id="counter"> {counter}/10 Correct</p>
       </div>
-      {/* <Timer startTimer={startTimer}  /> */}
+      <Timer key={timerKey} startTimer={startTimer} />
       <div className="the-Game">
         <div className="the-images">
           <div className="the-icons">

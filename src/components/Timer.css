@@ -1,0 +1,10 @@
+.countdown {
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+#time-up {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+}

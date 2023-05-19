@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import "./Timer.css";
 
-export function Timer({ startTimer }) {
-  const [seconds, setSeconds] = useState(10);
+export function Timer({ startTimer, resetTimer }) {
+  const [seconds, setSeconds] = useState(15);
 
   useEffect(() => {
     if (startTimer && seconds > 0) {
@@ -12,7 +13,15 @@ export function Timer({ startTimer }) {
     }
   }, [startTimer, seconds]);
 
-  return <div>Countdown: {seconds} </div>;
+  return (
+    <div className="countdown">
+      {seconds > 0 ? (
+        `Countdown: ${seconds}`
+      ) : (
+        <span id="time-up">Time's up!</span>
+      )}
+    </div>
+  );
 }
 
 export default Timer;
