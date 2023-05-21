@@ -1,23 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap");
 
-.container {
-  display: grid;
-  grid-template-columns: auto;
-}
-
 .the-images {
   display: flex;
   justify-content: center;
 }
-.buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .the-icons {
   position: absolute;
+
   z-index: 2;
-  top: 600px;
+  top: 35%;
 }
 .human,
 .machine {
@@ -34,11 +26,18 @@
   color: red;
 }
 
-.buttons-container {
+.tick,
+.cross {
+  width: 80%;
+}
+
+.buttons {
   position: absolute;
+
+  position: relative;
   display: flex;
   justify-content: center;
-  top: 30%;
+  align-items: center;
 }
 
 #humanButton,
@@ -49,10 +48,10 @@
 }
 
 #humanButton {
-  right: 18%;
+  right: 20%;
 }
 #aiButton {
-  left: 18%;
+  left: 20%;
 }
 
 .parent-reset {
@@ -101,7 +100,6 @@
 .counter-container {
   position: relative;
   text-align: center;
-  top: -20px;
 }
 .confetti {
   position: relative;
@@ -110,8 +108,9 @@
   align-items: center;
 }
 #counter {
+  margin-top: 50px;
   font-family: "Dosis", sans-serif;
-  font-size: 35px;
+  font-size: 2.3vw;
 }
 
 #title {
@@ -140,6 +139,17 @@
   animation: typewriter 2s steps(13) forwards, blink 950ms steps(13) infinite;
 }
 
+.game-para {
+  text-align: center;
+}
+
+#para-1 {
+  margin-top: 5%;
+}
+#para-2 {
+  margin-top: 40px;
+  margin-bottom: 6%;
+}
 #human-pink {
   color: rgb(246, 192, 255);
   font-weight: bold;
@@ -149,5 +159,6 @@
   color: rgb(128, 206, 255);
   font-weight: bold;
 }
+
 @media screen and (max-width: 1200px) {
 }

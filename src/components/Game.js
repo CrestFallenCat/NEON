@@ -130,17 +130,45 @@ export function Game() {
       {/* {showConfetti && <Confetti />} */}
 
       <h1 id="title">Ai or Human?</h1>
-      <p>
+      <p className="game-para" id="para-1">
         Is the picture you see before you create by a machine or by a human? See
-        how many you can guess correctly in 15 seconds! Click the{" "}
-        <span id="human-pink">Human</span> or <span id="ai-blue">Ai </span>
-        button to begin
+        how many you can guess correctly in 15 seconds!
+      </p>
+      <p className="game-para" id="para-2">
+        Click the <span id="human-pink">Human</span> or{" "}
+        <span id="ai-blue">Ai </span>
+        button to start the game and begin the countdown.
       </p>
       <div className="counter-container">
-        <p id="counter"> {counter}/10 Correct</p>
+        <p id="counter">
+          {" "}
+          <span style={{ color: counter > 0 ? "#32CD32" : "inherit" }}>
+            {counter}
+          </span>
+          /10 Correct
+        </p>
       </div>
       <Timer key={timerKey} startTimer={startTimer} />
-      <div className="the-Game">
+
+      <div className="buttons-container">
+        <div className="buttons">
+          <img
+            src={human}
+            id="humanButton"
+            onClick={handleHumanClick}
+            style={{
+              visibility: currentIndex < images.length ? "visible" : "hidden",
+            }}
+          ></img>
+          <img
+            src={ai}
+            id="aiButton"
+            onClick={handleAiClick}
+            style={{
+              visibility: currentIndex < images.length ? "visible" : "hidden",
+            }}
+          ></img>
+        </div>
         <div className="the-images">
           <div className="the-icons">
             {showTick && <FontAwesomeIcon icon={faCheck} className="tick" />}
@@ -164,26 +192,6 @@ export function Game() {
           ) : (
             <div style={{ width: "100%", height: "0px" }} />
           )}
-        </div>
-        <div className="buttons-container">
-          <div className="buttons">
-            <img
-              src={human}
-              id="humanButton"
-              onClick={handleHumanClick}
-              style={{
-                visibility: currentIndex < images.length ? "visible" : "hidden",
-              }}
-            ></img>
-            <img
-              src={ai}
-              id="aiButton"
-              onClick={handleAiClick}
-              style={{
-                visibility: currentIndex < images.length ? "visible" : "hidden",
-              }}
-            ></img>
-          </div>
         </div>
       </div>
 

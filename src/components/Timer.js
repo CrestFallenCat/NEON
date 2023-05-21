@@ -16,7 +16,13 @@ export function Timer({ startTimer, resetTimer }) {
   return (
     <div className="countdown">
       {seconds > 0 ? (
-        `Countdown: ${seconds}`
+        <span>
+          Countdown:
+          <span style={{ color: seconds <= 5 ? "red" : "inherit" }}>
+            {" "}
+            {seconds}
+          </span>
+        </span>
       ) : (
         <span id="time-up">Time's up!</span>
       )}
