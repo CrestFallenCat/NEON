@@ -13,11 +13,10 @@ function App() {
               {" "}
               Home
             </NavLink>
-
+            <NavLink to={"/Info"}> What next? </NavLink>
             <NavLink id="game" to={"/Game"}>
               The Game
             </NavLink>
-
             <NavLink id="comments" to={"/Comments"}>
               Talk
             </NavLink>
