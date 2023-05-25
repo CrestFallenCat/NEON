@@ -11,3 +11,9 @@
   font-size: 25px;
   font-weight: bold;
 }
+
+@media screen and (max-width: 375px) {
+  .countdown {
+    top: 20px;
+  }
+}

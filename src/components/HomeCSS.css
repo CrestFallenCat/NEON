@@ -148,6 +148,28 @@ p {
   }
 }
 
+.move-to-page-next span {
+  display: inline-block;
+}
+#find-out:hover {
+  background-color: rgba(0, 162, 255, 0.157);
+}
+.move-to-page-next a:hover span {
+  animation: wave-text 0.8s ease-in-out infinite;
+}
+
+@keyframes wave-text {
+  0% {
+    transform: translateY(0em);
+  }
+  60% {
+    transform: translateY(-0.2em);
+  }
+  100% {
+    transform: translateY(0em);
+  }
+}
+
 .brain-container {
   width: auto;
   display: flex;

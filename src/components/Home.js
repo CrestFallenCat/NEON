@@ -53,7 +53,21 @@ export function Home() {
               </p>
               <div className="move-to-page-next ">
                 <a id="find-out" onClick={handleClickScroll}>
-                  Show me the AI
+                  <span>S</span>
+                  <span>h</span>
+                  <span>o</span>
+                  <span>w </span>
+                  <span>&nbsp;</span>
+                  <span>M</span>
+                  <span>e </span>
+                  <span>&nbsp;</span>
+                  <span>T</span>
+                  <span>h</span>
+                  <span>e </span>
+                  <span>&nbsp;</span>
+                  <span>A</span>
+                  <span>I</span>
+                  {/* Show me the AI */}
                 </a>
               </div>
               <p id="second" className="intro-p">
