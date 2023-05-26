@@ -132,7 +132,7 @@ export function Game() {
       <div className="the-paragraphs">
         <p className="game-para" id="para-1">
           Is the picture you see before you create by a machine or by a human?
-          See how many you can guess correctly in 15 seconds!
+          See how many you can guess correctly in 20 seconds!
         </p>
         <p className="game-para" id="para-2">
           Click the <span id="human-pink">Human</span> or{" "}

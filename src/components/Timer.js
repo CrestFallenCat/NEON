@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./Timer.css";
 
 export function Timer({ startTimer, resetTimer }) {
-  const [seconds, setSeconds] = useState(15);
+  const [seconds, setSeconds] = useState(20);
 
   useEffect(() => {
     if (startTimer && seconds > 0) {
@@ -20,7 +20,7 @@ export function Timer({ startTimer, resetTimer }) {
           Countdown:
           <span style={{ color: seconds <= 5 ? "red" : "inherit" }}>
             {" "}
-            {seconds}
+            {seconds}s
           </span>
         </span>
       ) : (

@@ -115,7 +115,7 @@
 
 #title {
   background-color: rgba(0, 0, 0, 0.767);
-
+  margin-left: 2%;
   width: max-content;
   position: relative;
 }

@@ -136,12 +136,21 @@ export function Home() {
         )}
 
         <p className="about-images">
-          I found myself getting lost in the creation of these images, interest
-          what the ai brain would come up with, the speed and quality of the art
-          produced can't be denied. Although isn't art something more than just
-          the pure visuals? no actual feeling or emotion played any role in
-          creating these, there is something very detached and clinical about
-          it.. but does that matter?
+          I found myself getting lost in the creation of these images,
+          interested to see what the ai brain would come up with, the speed and
+          quality of the art produced can really be seen here. Although isn't
+          art something more than just the pure visuals? no actual feeling or
+          emotion played a role in creating these, there is something very
+          detached and clinical about it.. but does that matter? take a look
+          <span
+            id="move-to-info"
+            onClick={() => {
+              navigate("/Info");
+            }}
+          >
+            &nbsp;here&nbsp;
+          </span>
+          where i delve into it a bit further.
         </p>
 
         <p className="play-game" id="play-para">
