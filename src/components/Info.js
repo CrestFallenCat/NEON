@@ -1,8 +1,10 @@
 import "./Info.css";
 import React from "react";
 import { motion } from "framer-motion";
+import Cards from "./Cards";
 
 export function Info() {
+  const mountCards = window.innerWidth > 1170;
   return (
     <motion.div
       key="home"
@@ -14,21 +16,7 @@ export function Info() {
       <div>
         <h1 id="title">Future of art?</h1>
       </div>
-
-      <div className="container">
-        <div className="card">
-          <div className="face face1">
-            <div className="content">
-              <h3>Test</h3>
-            </div>
-          </div>
-          <div className="face face2">
-            <div className="content">
-              <p>this is the other part blah blha blhs hsdfdfdfdf</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {mountCards && <Cards />}
 
       <div>
         <p>
