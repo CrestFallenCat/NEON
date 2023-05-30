@@ -16,7 +16,6 @@ export function Info() {
       <div>
         <h1 id="title">Future of art?</h1>
       </div>
-      {mountCards && <Cards />}
 
       <div>
         <p>
@@ -71,26 +70,11 @@ export function Info() {
           to unlock new artistic possibilities and generate groundbreaking works
           that may not have been achievable through human artistry alone.
         </p>
-        <p>
-          While AI art advances and poses challenges to the traditional notion
-          of human creativity, it is important to recognize that art is not
-          solely defined by technical proficiency or visual appeal. Human
-          artistry encompasses a range of intangible qualities such as emotion,
-          interpretation, and personal narrative, which are deeply embedded in
-          the artistic process. These intrinsic elements ensure that human art
-          will always retain its unique and irreplaceable value. As the art
-          world navigates the evolving landscape of AI, it is crucial to find a
-          balance that allows for the coexistence and collaboration between
-          human artists and AI technologies, fostering innovation while
-          preserving the essence of human expression.
-        </p>
-        <p>
-          In addition to the intrinsic qualities that define human art, there
-          will always be individuals who value and appreciate the uniqueness and
-          authenticity that comes with owning a piece of artwork created by a
-          human artist. The human touch, the personal perspective, and the
-          emotional depth conveyed through brushstrokes, sculpting, or any other
-          artistic medium have an undeniable allure.
+        {mountCards && <Cards />}
+        <p id="last-para">
+          The human touch, the personal perspective, and the emotional depth
+          conveyed through brushstrokes, sculpting, or any other artistic medium
+          have an undeniable allure.
         </p>
       </div>
     </motion.div>
