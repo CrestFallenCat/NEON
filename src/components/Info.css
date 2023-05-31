@@ -1,3 +1,13 @@
+.human-art {
+  text-align: center;
+  border: 7px double rgba(208, 113, 255, 0.408);
+
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
 #last-para {
   background-color: rgba(0, 0, 0, 0.6);
   margin-top: 40px;
@@ -5,5 +15,7 @@
   padding-left: 2%;
   padding-right: 2%;
   box-shadow: 0px -30px 30px rgba(0, 0, 0, 0.6),
-    0px 30px 20px rgba(0, 0, 0, 0.6);
+    0px 30px 30px rgba(0, 0, 0, 0.6), 0px 60px 30px rgba(0, 0, 0, 0.6),
+    0px 90px 30px rgba(0, 0, 0, 0.6), 0px 120px 30px rgba(0, 0, 0, 0.6),
+    0px 160px 30px rgba(0, 0, 0, 0.6);
 }

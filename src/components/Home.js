@@ -3,7 +3,8 @@ import "./HomeCSS.css";
 
 import mid from "./pics/mid.png";
 import open from "./pics/openai.png";
-import Brain from "./pics/brain.png";
+// import Brain from "./pics/brain.png";
+import halfBrain from "./pics/halfBrain.png";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -78,7 +79,7 @@ export function Home() {
               </p>
             </div>
             <div className="brain-container">
-              <img id="brain" src={Brain}></img>
+              <img id="brain" src={halfBrain}></img>
             </div>
           </div>
         </div>

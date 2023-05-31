@@ -27,7 +27,7 @@
   border-radius: 10px;
 
   position: relative;
-  background: #160a38;
+  background: #1d0d47;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -43,28 +43,6 @@
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
-/* 
-#pink {
-  box-shadow: 0 0 10px rgba(255, 35, 251, 0.384);
-}
-#yellow {
-  box-shadow: 0 0 10px rgba(255, 240, 35, 0.384);
-}
-
-#blue {
-  box-shadow: 0 0 10px rgba(35, 229, 255, 0.384);
-}
-
-.card:hover #pink {
-  box-shadow: 0 0 30px rgba(255, 35, 251, 0.6);
-}
-.card:hover #yellow {
-  box-shadow: 0 0 30px rgba(255, 240, 35, 0.6);
-}
-
-.card:hover #blue {
-  box-shadow: 0 0 30px rgba(35, 229, 255, 0.6);
-} */
 
 .container .card .face.face1 .content {
   opacity: 0.2;
@@ -96,7 +74,7 @@
   justify-content: center;
   padding: 20px;
   box-sizing: border-box;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 100px rgba(0, 0, 0);
   transform: translateY(-100px);
 }
 
