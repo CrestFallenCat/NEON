@@ -19,3 +19,9 @@
     0px 90px 30px rgba(0, 0, 0, 0.6), 0px 120px 30px rgba(0, 0, 0, 0.6),
     0px 160px 30px rgba(0, 0, 0, 0.6);
 }
+
+@media screen and (max-width: 1400px) {
+  .human-art {
+    border: none;
+  }
+}

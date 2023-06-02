@@ -1,0 +1,37 @@
+.allBugs {
+  display: inline-flex;
+}
+#white,
+#yellow {
+  margin-right: 50px;
+}
+.pic-para {
+  border: 1px solid white;
+  padding-top: 30px;
+  backdrop-filter: blur(4px);
+}
+.pic-para p {
+  max-width: 300px;
+}
+.pic-para img {
+  background-color: rgba(0, 0, 0, 0.408);
+  border-radius: 50%;
+  padding: 5%;
+}
+.beetle {
+  max-width: 220px;
+}
+
+@media screen and (max-width: 1060px) {
+  .allBugs {
+    display: block;
+  }
+  .pic-para p {
+    max-width: 100%;
+  }
+  #white,
+  #yellow {
+    margin-right: 0;
+    margin-bottom: 3%;
+  }
+}

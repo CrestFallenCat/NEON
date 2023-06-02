@@ -2,9 +2,10 @@ import "./Info.css";
 import React from "react";
 import { motion } from "framer-motion";
 import Cards from "./Cards";
+import CardAlt from "./CardAlt";
 
 export function Info() {
-  const mountCards = window.innerWidth > 1170;
+  const mountCards = window.innerWidth > 1400;
   return (
     <motion.div
       key="home"
@@ -57,7 +58,7 @@ export function Info() {
             Here are a few reasons i personally think there will always be a
             place for human art.
           </p>
-          {mountCards && <Cards />}
+          {mountCards ? <Cards /> : <CardAlt />}
         </div>
         <p id="last-para">
           The human touch, the personal perspective, and the emotional depth

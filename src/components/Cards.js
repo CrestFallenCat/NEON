@@ -53,10 +53,10 @@ function Cards() {
           <div className="face face2">
             <div className="content">
               <p>
-                Many humans have a preference for investing their financial
-                resources solely in artwork crafted by fellow human beings.There
-                is a deep appreciation for the human touch and creative
-                expression that emerges uniquely within our species.
+                People have a preference for investing their financial resources
+                in artwork crafted by fellow human beings.There is an
+                appreciation creative expression that emerges uniquely within
+                our species.
               </p>
             </div>
           </div>
