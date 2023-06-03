@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Cards from "./Cards";
 import CardAlt from "./CardAlt";
+import redBrain from "./pics/redBrain.png";
 
 export function Info() {
   const mountCards = window.innerWidth > 1400;
@@ -39,19 +40,25 @@ export function Info() {
           businesses or individuals commissioning artwork, this extended
           timeline can result in higher costs and delayed deliverables.
         </p>
-        <p>
-          In contrast, AI offers a faster alternative. Machine learning
-          algorithms can analyze vast amounts of data and generate art in a
-          fraction of the time it would take a human artist. This accelerated
-          production process has the potential to attract businesses and clients
-          looking for quick turnaround times and cost-effective solutions.
-        </p>
-        <p>
-          Rather than viewing AI as a threat, some artists have embraced it as a
-          new tool for exploration and inspiration. They see AI as a
-          collaborator that can augment their creative process, pushing the
-          boundaries of what is possible.
-        </p>
+        <div div className="red-brain">
+          <p className="brain-para">
+            AI offers a faster alternative. Machine learning algorithms can
+            analyze vast amounts of data and generate art in a fraction of the
+            time it would take a human artist. This accelerated production
+            process has the potential to attract businesses and clients looking
+            for quick turnaround times.
+          </p>
+          <img src={redBrain}></img>
+          <p className="brain-para">
+            The advent of artificial intelligence has sparked diverse
+            perspectives among artists. While some may view AI as a potential
+            threat, others have eagerly embraced it as a valuable tool for
+            artistic exploration and inspiration. This group of artists
+            recognizes AI as a unique collaborator that can enhance and augment
+            their creative process.
+          </p>
+        </div>
+
         <div className="human-art">
           <h2> A few thoughts.. </h2>
           <p>
@@ -60,11 +67,13 @@ export function Info() {
           </p>
           {mountCards ? <Cards /> : <CardAlt />}
         </div>
-        <p id="last-para">
-          The human touch, the personal perspective, and the emotional depth
-          conveyed through brushstrokes, sculpting, or any other artistic medium
-          have an undeniable allure.
-        </p>
+        <div className="last-para-container">
+          <p id="last-para">
+            The human touch, the personal perspective, and the emotional depth
+            conveyed through brushstrokes, sculpting, or any other artistic
+            medium have an undeniable allure.
+          </p>
+        </div>
       </div>
     </motion.div>
   );
