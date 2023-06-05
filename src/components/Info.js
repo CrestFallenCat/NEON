@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import Cards from "./Cards";
 import CardAlt from "./CardAlt";
 import redBrain from "./pics/redBrain.png";
+import lizardPink from "./pics/lizard1.png";
+import lizardYellow from "./pics/lizard2.png";
+import lizardBlue from "./pics/lizard3.png";
 
 export function Info() {
   const mountCards = window.innerWidth > 1400;
@@ -20,26 +23,37 @@ export function Info() {
       </div>
 
       <div>
-        <p>
-          Traditionally, human art has been celebrated for its uniqueness and
-          the inherent human experiences and emotions it encapsulates. AI has
-          shown that it can generate artworks that possess similar qualities,
-          blurring the line between what is created by humans and what is
-          created by machines.
-        </p>
-        <p>
-          This advancement has sparked worry among artists who fear that their
-          livelihoods may be threatened. With AI capable of generating art that
-          is aesthetically pleasing and conceptually rich, some artists feel
-          that their creative expertise is being overshadowed.
-        </p>
-        <p>
-          The impact of AI on the art industry raises significant questions
-          about cost and efficiency. Creating art is often a time-consuming
-          process that can take weeks, if not months, to complete. For
-          businesses or individuals commissioning artwork, this extended
-          timeline can result in higher costs and delayed deliverables.
-        </p>
+        <div className="first-section">
+          <div className="lizard-para">
+            <img className="lizards" src={lizardPink}></img>
+            <p>
+              Traditionally, human art has been celebrated for its uniqueness
+              and the inherent human experiences and emotions it encapsulates.
+              AI has shown that it can generate artworks that possess similar
+              qualities, blurring the line between what is created by humans and
+              what is created by machines.
+            </p>
+          </div>
+          <div className="lizard-para">
+            <img className="lizards" src={lizardYellow}></img>
+            <p>
+              This advancement has sparked worry among artists who fear that
+              their livelihoods may be threatened. With AI capable of generating
+              art that is aesthetically pleasing and conceptually rich, some
+              artists feel that their creative expertise is being overshadowed.
+            </p>
+          </div>
+          <div className="lizard-para">
+            <img className="lizards" src={lizardBlue}></img>
+            <p>
+              The impact of AI on the art industry raises significant questions
+              about cost and efficiency. Creating art is often a time-consuming
+              process that can take weeks, if not months, to complete. For
+              businesses or individuals commissioning artwork, this extended
+              timeline can result in higher costs and delayed deliverables.
+            </p>
+          </div>
+        </div>
         <div div className="red-brain">
           <p className="brain-para">
             AI offers a faster alternative. Machine learning algorithms can
@@ -60,19 +74,8 @@ export function Info() {
         </div>
 
         <div className="human-art">
-          <h2> A few thoughts.. </h2>
-          <p>
-            Here are a few reasons i personally think there will always be a
-            place for human art.
-          </p>
+          <p>There will always be a place for us</p>
           {mountCards ? <Cards /> : <CardAlt />}
-        </div>
-        <div className="last-para-container">
-          <p id="last-para">
-            The human touch, the personal perspective, and the emotional depth
-            conveyed through brushstrokes, sculpting, or any other artistic
-            medium have an undeniable allure.
-          </p>
         </div>
       </div>
     </motion.div>

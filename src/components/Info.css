@@ -1,3 +1,21 @@
+.first-section {
+  margin-top: 3%;
+  margin-bottom: 10%;
+}
+
+.lizard-para {
+  display: flex;
+  align-items: center;
+  margin-left: 2%;
+  margin-bottom: 3%;
+}
+.lizard-para p {
+  margin-left: 3%;
+  max-width: 90%;
+}
+.lizards {
+  max-width: 70px;
+}
 .human-art {
   text-align: center;
 
@@ -12,24 +30,24 @@
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.51);
   border-bottom: 1px solid rgb(244, 122, 255);
-  box-shadow: 0px -30px 30px rgba(0, 0, 0, 0.6),
+  box-shadow: 0px -30px 30px rgba(0, 0, 0, 0.7),
     0px 30px 80px rgba(238, 0, 255, 0.308);
   margin-top: 5%;
-  margin-bottom: 8%;
+  margin-bottom: 12%;
   padding-bottom: 1%;
 }
 .red-brain img {
-  max-width: 25%;
+  max-width: 450px;
   margin-left: 4%;
   margin-right: 4%;
-  animation: pulsate 3s infinite;
+  animation: pulsate 7s infinite;
 }
 @keyframes pulsate {
   0% {
     opacity: 1;
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.2;
   }
   100% {
     opacity: 1;

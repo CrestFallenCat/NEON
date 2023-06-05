@@ -55,16 +55,18 @@
 }
 
 .parent-reset {
-  margin-top: 5%;
+  /* margin-top: 5%; */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 30%;
+  margin-bottom: 25px;
 }
 .resetButton {
+  transform: translateY(-50px);
+
   border-radius: 50%;
   border: 2px solid rgb(192, 192, 255);
-  padding: 4%;
+  padding: 2%;
   font-family: "Indie Flower", cursive;
   color: rgb(160, 250, 255);
   background-color: rgba(0, 0, 0, 0.097);
