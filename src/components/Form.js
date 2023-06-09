@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function CommentForm() {
+function CommentForm({ onFormSubmit }) {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
 
@@ -8,41 +8,36 @@ function CommentForm() {
     setName(event.target.value);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onFormSubmit(name, comment);
+    setName("");
+    setComment("");
+  };
+
   const handleCommentChange = (event) => {
     setComment(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle form submission logic here
-    // e.g., send data to a server, update state, etc.
-    console.log("Name:", name);
-    console.log("Comment:", comment);
-  };
-
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        value={name}
-        onChange={handleNameChange}
-        required
-      />
-
-      <label htmlFor="comment">Comment:</label>
-      <textarea
-        id="comment"
-        name="comment"
-        value={comment}
-        onChange={handleCommentChange}
-        rows="4"
-        required
-      ></textarea>
-
-      <input type="submit" value="Submit" />
+      <label>
+        Name:
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label>
+      <label>
+        Comment:
+        <input
+          type="text"
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+        />
+      </label>
+      <button type="submit">Submit</button>
     </form>
   );
 }
