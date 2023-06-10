@@ -1,12 +1,12 @@
-import { React, useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./CommentsCSS.css";
 import Form from "./Form.js";
-import EditComment from "./EditComment";
-import DeleteComment from "./DeleteComment";
 
 export function Comments() {
   const [comments, setComments] = useState([]);
+  const [editingIndex, setEditingIndex] = useState(-1);
+  const [editedComment, setEditedComment] = useState("");
 
   const handleFormSubmit = (name, comment) => {
     const newComment = {
@@ -34,6 +34,22 @@ export function Comments() {
     });
   };
 
+  const handleStartEditing = (index, comment) => {
+    setEditingIndex(index);
+    setEditedComment(comment);
+  };
+
+  const handleSaveComment = (index) => {
+    handleEditComment(index, editedComment);
+    setEditingIndex(-1);
+  };
+
+  const handleKeyPress = (event, index) => {
+    if (event.key === "Enter") {
+      handleSaveComment(index);
+    }
+  };
+
   return (
     <motion.div
       initial={{ width: 0 }}
@@ -56,16 +72,29 @@ export function Comments() {
         <div className="comment-box" key={index}>
           <p>Name: {comment.name}</p>
           <div className="comments">
-            <p>Comment: {comment.comment}</p>
+            {editingIndex === index ? (
+              <input
+                type="text"
+                value={editedComment}
+                onChange={(e) => setEditedComment(e.target.value)}
+                onKeyDown={(e) => handleKeyPress(e, index)}
+              />
+            ) : (
+              <p>{comment.comment}</p>
+            )}
           </div>
-          <EditComment
-            comment={comment}
-            onSave={(newComment) => handleEditComment(index, newComment)}
-          />
-          <DeleteComment
-            comment={comment}
-            onDelete={() => handleDeleteComment(index)}
-          />
+          <div>
+            {editingIndex === index ? (
+              <button onClick={() => handleSaveComment(index)}>Save</button>
+            ) : (
+              <button
+                onClick={() => handleStartEditing(index, comment.comment)}
+              >
+                Edit
+              </button>
+            )}
+            <button onClick={() => handleDeleteComment(index)}>Delete</button>
+          </div>
         </div>
       ))}
     </motion.div>
