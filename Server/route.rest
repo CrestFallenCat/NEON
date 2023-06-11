@@ -1,0 +1,4 @@
+GET http://localHost:1234/api
+
+###
+POST http://localHost:1234/api

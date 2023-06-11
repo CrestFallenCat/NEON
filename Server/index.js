@@ -1,13 +1,13 @@
 const express = require("express");
+const cors = require("cors");
+const commentsRouter = require("./commentsRouter");
 
 const app = express();
+app.use(cors());
+app.use(express.json());
 
-const comments = require("./routes/comments");
+app.use("/api", commentsRouter);
 
-app.use("/api/comments", comments);
-
-app.get("/api", (req, res) => {
-  res.send("Hello from express");
+app.listen(1234, () => {
+  console.log("Server started on port 1234");
 });
-
-app.listen(1234);

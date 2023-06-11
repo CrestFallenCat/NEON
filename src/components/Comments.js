@@ -8,14 +8,41 @@ export function Comments() {
   const [editingIndex, setEditingIndex] = useState(-1);
   const [editedComment, setEditedComment] = useState("");
 
+  const [backendData, setBackendData] = useState([]);
+
+  useEffect(() => {
+    fetch("/api")
+      .then((response) => response.json())
+      .then((data) => {
+        setBackendData(data);
+      });
+  }, []);
+
   const handleFormSubmit = (name, comment) => {
     const newComment = {
       name,
       comment,
     };
 
-    setComments([...comments, newComment]);
-    console.log(newComment);
+    // setComments([...comments, newComment]);
+
+    fetch("http://localhost:1234/api", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newComment),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        // Handle the response from the server if needed
+        console.log(result);
+        setComments([...comments, newComment]);
+      })
+      .catch((error) => {
+        // Handle any errors that occur during the request
+        console.error(error);
+      });
   };
 
   const handleDeleteComment = (commentIndex) => {
@@ -67,6 +94,17 @@ export function Comments() {
         </p>
         <p>Im sure you reckon something. Have at it</p>
       </div>
+
+      <div>
+        {typeof backendData.comments === "undefined" ? (
+          <p>Loading...</p>
+        ) : (
+          backendData.comments.map((comment, index) => (
+            <p key={index}>{comment}</p>
+          ))
+        )}
+      </div>
+
       <Form onFormSubmit={handleFormSubmit} />
       {comments.map((comment, index) => (
         <div className="comment-box" key={index}>
